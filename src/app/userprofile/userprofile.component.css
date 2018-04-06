@@ -1,0 +1,213 @@
+
+@media only screen and (min-width: 320px){
+    .mrgntp{
+    margin-top: 20%;
+    margin-bottom: 5%;
+}
+}
+
+@media only screen and (min-width: 870px){
+    .mrgntp{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+}
+.AccountSettings {
+    display: block;
+    margin-top: 25px;
+    color: rgb(46, 89, 132) !important;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.SettingMenu {
+    border-right: 1px solid rgba(0, 0, 0, .12);
+    height: 285px;
+    padding: 0 10%;
+}
+hr{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 0.40px solid #bfbdbd;
+}
+
+@media only screen and (min-width: 320px){
+.UserSetting {
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 50%;
+}
+}
+@media only screen and (min-width: 870px){
+.UserSetting {
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 60%;
+    height: 315px;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: 30%;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
+}
+
+.Vseperator {
+    padding-bottom:  10px;
+    border-bottom:  1px solid rgba(0, 0, 0, .12);
+    position:  absolute;
+    width: 215px;
+    margin-top:  65px;
+    margin-left:  81px;
+}
+
+.menu-ul {
+    text-decoration:  none;
+    list-style:  none;
+}
+
+.menuMain {
+    text-decoration:  none;
+    font-weight:  bold;
+    font-size: 15px;
+}
+
+.menuSub {
+    margin-top:  10px; /*20px;
+    margin-left: 36px;*/
+    font-size:  14px;
+    color:  rgb(46, 89, 132) !important;
+    cursor: pointer;
+    padding: 0 5%;
+}
+
+.menuDivs {
+    position: absolute;
+}
+
+.menuDiv2 {
+    margin-top: 85px;
+}
+
+.menuDiv3 {
+    margin-top: 173px;
+}
+
+.profile {
+    margin-top: 10px;
+    position: absolute;
+    font-size: 18px;
+    color: rgb(46, 89, 132) !important;
+    font-weight: bold;
+    width: 500px;
+    text-align: center;
+}
+
+.Vline {
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    position: absolute;
+    width: 500px;
+    margin-top: 39px;
+}
+
+.editProf {
+    margin-left: 55px;
+    display: block;
+    margin-top: 45px;
+}
+
+.email {
+    margin-top: -11px;
+}
+
+.MatForms {
+    width: 60% !important;
+    margin-left: 75px !important;
+}
+
+ .inps {
+    display: block;
+    margin-top: -20px;
+}
+
+.contactInp {
+    margin-left: 61px !important;
+}
+
+.genderInp {
+    margin-left: 63px !important;   
+}
+
+.edit-icon {
+    font-size: 17px !important;
+    cursor: pointer;
+}
+
+.ProfBtn {
+    margin-left: 35.4%;
+    margin-top: 5px;
+    background: rgb(46, 89, 132) !important;
+    /*background-color: #d8d8d8*/
+}
+
+.editPass {
+    margin-left: 55px;
+    display: block;
+    margin-top: 64px;
+}
+
+.passInps{
+    display: block;
+    font-size: 15px;
+}
+
+.PassBtn {
+    margin-left: 35.4%;
+    background: rgb(46, 89, 132) !important;
+}
+
+.PassForm {
+    width: 92.9%;
+}
+
+.subscribeInps {
+    display: block;
+    margin-top: 155px;
+    margin-left :80px;
+}
+
+.subscribeInps img {
+    position: absolute;
+    height: 49px;
+    margin-top: -64px;
+    margin-left: 156px;
+}
+
+.plan {
+    margin-left: 52px;
+}
+
+.activePlan{
+    color: rgb(46, 89, 132) !important; 
+}
+
+.dates {
+    display: block;
+}
+
+.profileForm {
+    display: none;
+}
+
+.passwordForm {
+    display: none;
+}
+
+.suscribeForm{
+    display: none;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+

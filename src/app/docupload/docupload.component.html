@@ -1,0 +1,66 @@
+
+<div class="container margtp minHeight">
+	<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+				<div class="form-all">
+					<div class="form-section page-section" style="list-style-type: none">
+						<div class="form-line" data-type="control_image" id="id_11">
+							<div id="cid_11" class="form-input-wide">
+							<div class="sentimg">
+									<img alt="Sententia" class="form-image" border="0" src="/assets/sententia.png"/>         
+								</div>
+
+							</div>
+						</div>
+			       		<div class="" *ngIf = "uploadDiv">
+				    		<p align="center" class="li_p">To analyse the document upload your file here. </p>
+					<form class="" ngNoForm action="/api/disp" method="post" onsubmit="return LoadImg()" enctype="multipart/form-data"  id="form_id" accept-charset="utf-8">
+				    		<input style="display:none;" id="email" name="email" type="text" value={{userStatus}} />
+				    		<input type="text" class="form-textbox" onKeyDown="return false;" name="file_name" id="file_name"
+				    		 autocomplete="off"/>
+				    		<input id="f" class="form-browse" style="display:none;" type="file" name="q8_input" file-accept="doc, docx, txt" onChange="ex(this)" file-maxsize="512000" file-minsize="0" file-limit="1" #fileInp />
+				    		<input mat-raised-button color="primary" type="button" value="Browse..." id="fakeBrowse" (click)="HandleBrowseClick()" />
+						<div class="ACENTER">
+							<label class="note form-sub-label" for="input_15"> ( Note: Only .doc, .docx and .txt files ) </label>
+						</div>
+						<div id="cid" class="form-input">
+							<div style="text-align:center; margin-top: 0px; height: 25px;" class="form-buttons-wrapper">
+								<button mat-raised-button color="primary" id="input_" type="submit" class="submit_button" (click)="LoadImg()">SUBMIT</button>
+							</div>
+								
+						</div>
+					</form>
+			<div class="uploadLoading" [ngClass]="{'uploadLoadingDisplay': uploadLoadingDisplayValue}">
+				<img src="../assets/sengif2.svg" />
+			</div>
+
+			<div align="center" class="homefont">OR Type your text <a (click) = "toggleView()">right here</a> and click on Analyse</div>
+				    	</div>
+			   		</div>
+				</div>
+
+				
+</div>
+	<div >
+				<div *ngIf = "quickDiv">
+						<div>
+							<p align="center" class="li_p">Enter the text you want to check. </p>
+							<quill-editor [(ngModel)]="editorContent"
+			            	  	[options]="editorOptions"
+			              		(blur)="onEditorBlured($event)"
+			              		(focus)="onEditorFocused($event)"
+			              		(ready)="onEditorCreated($event)"
+			              		(change)="onContentChanged($event)">
+			              	</quill-editor>
+			          	</div>
+			          		<div id="cid" class="form-quickinput">
+							<div style="text-align:center; margin-top: 0px; height: 25px;" class="form-buttons-wrapper">
+								 <button mat-raised-button color="primary" type="submit" class="submit_button" (click)="quickAnalysis()">ANALYSE</button>
+							</div>
+         
+         					 </div>	
+         					 <div align="center"  class="quickfont">To upload a document <a (click)="homeView()">click here</a> </div>
+
+         		 </div>
+</div>
+
+<!--********************************************************************************************************************************************************************-->

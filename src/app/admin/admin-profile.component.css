@@ -1,0 +1,382 @@
+.settings_menu{
+    font-size: 15px;
+    color: #4284bc;
+    padding: 0 15%;
+}
+hr{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 0.5px solid #dadada;
+}
+.example-full-width {
+  width: 80%;
+}
+.fntwght{
+    font-weight: 600;
+}
+.padlfrt{
+    padding: 0 10px;
+}
+.verticalline{
+    border-right: 1px solid #bfbdbd;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #4284bc;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 320px){
+    .mrgntp{
+    margin-top: 20%;
+    margin-bottom: 5%;
+}
+}
+
+@media only screen and (min-width: 870px){
+    .mrgntp{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+}
+
+
+.MatForms {
+    width: 100% !important;
+    margin-left: 0% !important;
+}
+
+
+ .inps {
+    display: block;
+    margin-top: -20px;
+}
+@media only screen and (min-width: 320px){
+.UserSetting {
+    /*height: 275px;
+    margin-top: -288px;*/
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+}
+@media only screen and (min-width: 870px){
+.UserSetting {
+    /*height: 275px;
+    margin-top: -288px;*/
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 40%;
+    margin-left: 30%;
+    margin-right: auto;
+    height: auto;
+    border-radius: 10px;
+}
+}
+
+@media only screen and (min-width: 320px){
+.UserSetting1{
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+}
+@media only screen and (min-width: 870px){
+    .UserSetting1{
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 40%;
+    margin-left: 30%;
+    margin-right: auto;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+}
+
+.profile {
+    margin-top: 10px;
+    font-size: 18px;
+    color: rgb(46, 89, 132) !important;
+    font-weight: bold;
+    text-align: center;
+    z-index: 5;
+}
+
+.Vline {
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    position: absolute;
+    width: 500px;
+    margin-top: 39px;
+}
+
+.editProf {
+    margin: 3%;
+    display: block;
+}
+
+.email {
+    margin-top: -11px;
+}
+
+.edit-icon {
+    font-size: 17px !important;
+    cursor: pointer;
+  color: rgba(0,0,0,.7);
+}
+
+.inps {
+    display: block;
+    margin-top: -20px;
+}
+
+.contactInp {
+    margin-left: 61px !important;
+}
+
+.genderInp {
+    margin-left: 63px !important;   
+}
+
+
+.ProfBtn {
+    margin-left: 35.4%;
+    margin-top: 5px;
+    background: rgb(46, 89, 132) !important;
+    /*background-color: #d8d8d8*/
+}
+
+.item2{
+    margin-top: 4%;
+}
+
+.dline{
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 75%;
+    background-color: transparent;
+}
+
+.space{
+    width: 15%;
+}
+
+/*.pratt{
+    margin-top: 4%;
+    margin-bottom: 4%;
+}*/
+
+.subscribeInps {
+    display: block;
+}
+.subscdetls{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5% 0;
+    color: #4086f4;
+}
+.substype{
+    padding: 2% 0;
+}
+
+
+.plan {
+    margin-left: 52px;
+}
+
+.dates {
+    display: block;
+}
+
+.activePlan{
+    color: rgb(46, 89, 132) !important; 
+}
+
+.editPass {
+    margin-left: 55px;
+    display: block;
+    margin-top: 64px;
+}
+
+
+.PassForm {
+    width: 92.9%;
+}
+
+.passInps{
+    display: block;
+    font-size: 15px;
+}
+
+.edit-icon {
+    font-size: 17px !important;
+    cursor: pointer;
+    color: rgba(0,0,0,.7);
+}
+
+.PassBtn {
+    margin-top: 5%;
+    margin-left: 38%;
+     background-color: #3f51b5;
+    margin-bottom: 5%;
+}
+@media only screen and (min-width: 320px){
+.subBtn {
+    background-color: #3f51b5;
+    margin-left: 28%;
+    margin-bottom: 3%;
+}
+}
+@media only screen and (min-width: 870px){
+.subBtn {
+    background-color: #3f51b5;
+    margin-left: 38%;
+    margin-bottom: 3%;
+}
+}
+
+@media only screen and (min-width: 870px){
+.subBtn1 {
+    background-color: #3f51b5;
+    margin-left: 15%;
+    margin-bottom: 3%;
+}
+}
+
+.docname-table mat-header-cell {
+  font-size: 15px !important;
+  color: #406d9b !important;
+}
+
+@media only screen and (min-width: 320px){
+.UserSetting2{
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 42%;
+    margin-left: 30%;
+    margin-right: auto;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+
+}
+}
+
+@media only screen and (min-width: 870px){
+.UserSetting2{
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+
+}
+}
+
+.tablehead {
+  display: block;
+  color: #406d9b;
+  margin-top: 5px;
+  font-size: 20px !important;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+@media only screen and (min-width: 320px) {
+  .example-container {
+  display: flex;
+  flex-direction: column;
+  width:93%;
+  margin-top:15%;
+} 
+}
+@media only screen and (min-width: 870px) {
+  .example-container {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  margin-top:0%;
+} 
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+  text-align: center;
+}
+
+
+
+
+
+.sentimage {
+    width: 194px;
+    margin: 0 auto;
+    margin-top: 108px;
+    margin-left: 453px;
+}
+
+.sentimage img {
+    height: 80px;
+}
+
+
+.form-textbox {
+    width: 400px;
+    margin-top: 5px;
+}
+
+/*.li2 {
+    margin-top: 125px;
+    margin-left: -15px
+}*/
+
+.form-input {
+    margin-top: 10px;
+}
+
+/*.form-input105 {
+    position: absolute;
+    margin-left: 566px;
+    margin-top: 105px;
+}*/
+.dwnloadtmplate {
+    margin: 1% 0;
+}
+
+.note {
+    font-weight: 100;
+    margin:1% 0; 
+}
+
+/*.uploadLoading {
+    position: absolute;
+    margin-left: 629px;
+    margin-top: 70px;
+}*/
+
+.uploadLoading img {
+    height:50px;
+}
+
+.uploadLoadingDisplay {
+    display: none;
+}
+
+.button {
+  background-color: #3f51b5;  
+  border-radius: 5px;
+  color: white;
+  padding: .5em;
+  text-decoration: none;
+}
+.ulpadng{
+    -webkit-padding-start: 0;
+    list-style-type: none;
+}

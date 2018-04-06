@@ -1,0 +1,36 @@
+<div class="main minHeight">
+  <mat-grid-list cols="2">
+  <mat-grid-tile class="gif-img">
+    <div class="abt-img">
+      <img class="img-responsive " src="/assets/the-guy.png" />
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile class="form-mat">
+    <div class="formdiv">
+    <form class="example-form">
+      <span class="fpass">Having trouble logging in?</span>
+      <mat-form-field class="example-full-width form-class-2">
+        <input matInput placeholder="New Password" [formControl]="newpasswdFormControl" [type]="hide ? 'password' : 'text'" [errorStateMatcher]="matcher">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="newpasswdFormControl.hasError('required')">
+          Please enter <strong>new password</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width form-class-2">
+        <input matInput placeholder="Confirm Password" [formControl]="conpasswdFormControl" [type]="hide ? 'password' : 'text'" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="conpasswdFormControl.hasError('required')">
+          Please confirm your <strong>password</strong></mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="signin-btn">Change Password</button>
+    </form>
+    <span class="forgot-pass form-links"><a routerLink='/signin'>Back to Sign In</a></span>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list class="abt-sen-txt" cols="1" rowHeight="100px">
+<mat-grid-tile>
+  <div class="about-sen"><p>"Sententia is a web based writing assistive tool which enables, by providing suggestions with explanation, scholars writing technical papers/reports according to the styles, guidelines and procedures of formal writing. The most important goal in writing a paper is to make yourself understood by the intended audience"<span class="glyphicons glyphicons-eye-open"></span></p><br>
+	</div>
+</mat-grid-tile>
+</mat-grid-list>
+</div>

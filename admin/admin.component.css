@@ -1,0 +1,38 @@
+
+@media only screen and (min-width: 320px) {
+  .example-container {
+  display: flex;
+  flex-direction: column;
+  width:93vw;
+  margin-top:15%;
+} 
+}
+@media only screen and (min-width: 870px) {
+  .example-container {
+  display: flex;
+  flex-direction: column;
+  width:100vw;
+  margin-top:5%;
+} 
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+  text-align: center;
+}
+
+.tablehead {
+  display: block;
+  color: #406d9b;
+  margin-top: 5px;
+}
+
+.mat-header-cell{
+  text-align: center !important;
+}
+
+.margTOP {
+  margin-top: 5%;
+
+}

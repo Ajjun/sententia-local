@@ -1,0 +1,15 @@
+ <div class="container-fluid margTOP" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="10px">
+ 	<div fxFlex="100%">
+ 		<div fxFlex="33%"></div>
+	<mat-form-field fxFlex="33%">
+  			<mat-select placeholder="Select User" [(ngModel)]="selectedUser">
+    		<mat-option *ngFor="let user of selectuserInfo" [value]="user.userid">
+      		{{ user.name }}
+    		</mat-option>
+
+  </mat-select>
+</mat-form-field>
+<div fxFlex="33%"></div>
+ 	</div>
+ 
+</div>

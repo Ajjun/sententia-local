@@ -1,0 +1,417 @@
+      <mat-progress-bar *ngIf="progressbar"
+          class="progressBar"
+          color="primary"
+          mode="indeterminate">
+      </mat-progress-bar>
+    
+<div class="container margtp" id="home">
+   <div class="">
+     <img src="./assets/signinbckgrnd.png" width="35%" height="auto" class="signinbckgrndimg">
+   </div>
+  <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+    <div class="item1" fxFlex="50%">
+      <p class="senttext">Sententia is a formal writing assistive tool for students and professionals.
+        <span class="glyphicons glyphicons-eye-open"></span>
+      </p>
+      <p class="sentsubtxt" id="topDiv">Sententia helps in cultivating good writing habit.</p>
+    </div>
+    
+    <div class="item2" fxFlex>
+
+      <div class="formdiv" *ngIf="signin">
+        <div class="signin">Login</div>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" [formControl]="emailFormControl"
+               [errorStateMatcher]="matcher" [(ngModel)]="userid">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" style="margin-top:15px;">
+        <input matInput placeholder="Password" name="captcha" [(ngModel)]="userpass" [formControl]="passwdFormControl" [type]="hide ? 'password' : 'text'" [errorStateMatcher]="matcher" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="passwdFormControl.hasError('required')">
+          Password is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <div [className]="'mycaptcha'" id="captch" [ngStyle]="{'border-color': errclr}">
+        <div class="antibot justify-content-between">
+          <!--<span>{{ code1 }} + {{ code2 }} = </span>-->
+          <input class="cap-input" [(ngModel)]="num1" [disabled]="random != 1" name="inp1" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req1> +
+          <input class="cap-input" [(ngModel)]="num2" [disabled]="random != 2" name="inp2" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req2> =
+          <input class="cap-input" [(ngModel)]="num3" [disabled]="random != 3" name="inp3" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req3>&nbsp;&nbsp;&nbsp;
+          <a (click)="ngOnInit()" title="New Equation"><i class="refresh fa fa-repeat" aria-hidden="true"></i></a>
+            <!--<p><span>random = {{ random }}</span></p>-->
+            <p><span [ngStyle]="{'color': captxt}">{{ output }}</span></p>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" class="signin-btn" type="submit" (click)="check()">Sign In</button>
+    </form>
+    <div class="forgot-pass form-links"><a (click)="frgtPwd()">Forgot Password</a></div>
+    <div class="not-registered form-links-reg"><a (click)="callRegister();ngOnInit()">Register</a></div>
+    </div>
+
+
+    <div class="formdiv" *ngIf="registerMe">
+   <form class="example-form" (ngSubmit)="callEmailCheck()"> 
+      <div class="signin">Register</div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" data-is-rendered="true" [(ngModel)]="username" [formControl]="regNameFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="regEmailFormControl.hasError('required')">
+          Name is <strong>required</strong>
+          </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width form-class-1">
+        <input matInput placeholder="Email" [(ngModel)]="regUseremail" [formControl]="regEmailFormControl"
+               [errorStateMatcher]="matcher">
+        <mat-error *ngIf="regEmailFormControl.hasError('email') && !regEmailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="regEmailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width form-class-2">
+        <input matInput placeholder="Password" [(ngModel)]="userpasswd" [formControl]="regPasswdFormControl" [type]="hide ? 'password' : 'text'" [errorStateMatcher]="matcher">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="regPasswdFormControl.hasError('required')">
+          Password is <strong>required</strong></mat-error>
+      </mat-form-field>
+
+      <div [className]="'mycaptcha'" id="captch" [ngStyle]="{'border-color': errclr}">
+        <div class="antibot justify-content-between">
+          <!--<span>{{ code1 }} + {{ code2 }} = </span>-->
+          <input class="cap-input" [(ngModel)]="num1" [disabled]="random != 1" name="inp1" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req1> +
+          <input class="cap-input" [(ngModel)]="num2" [disabled]="random != 2" name="inp2" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req2> =
+          <input class="cap-input" [(ngModel)]="num3" [disabled]="random != 3" name="inp3" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req3>&nbsp;&nbsp;&nbsp;
+          <a (click)="ngOnInit()"><i class="refresh fa fa-repeat" aria-hidden="true"></i></a>
+            <!--<p><span>random = {{ random }}</span></p>-->
+            <p><span [ngStyle]="{'color': captxt}">{{ output }}</span></p>
+        </div>
+      </div>
+
+
+
+    <mat-checkbox color="primary" class="agree" [formControl]="checkbox" required>I agree to the <a href="#" target="_blank">terms and conditions</a></mat-checkbox>
+    <span class="forgot-pass form-links-reg"><a (click)="callAllreadyMember();ngOnInit()">Already a Member?</a></span>
+    <button mat-raised-button color="primary" class="signin-btnReg">Register</button>
+      </form>
+    </div>
+
+    <div class="e2e-inner-html-bound" [innerHTML]= "form_value"></div> 
+
+<div class="formdiv formdivPricing" *ngIf="sen_pricing">
+    <span class="PaymentHeadTxt">Payment Plans</span>
+  <div class="prcngdv">
+    <div class="YearlyPlanCal" [ngClass]="{'YearlyPlanCalActive': YearlyPlanCalActiveVal}" (click)="YearlyClick()">
+      <span class="Lines YearlyHLines Hline1" style="margin-top: 61px;"></span>
+      <span class="Lines YearlyHLines Hline2" style="margin-top: 84px;"></span>
+      <span class="Lines YearlyHLines Hline3" style="margin-top: 110px;"></span>
+      <span class="Lines YearlyHLines Hline3" style="margin-top: 126px;display: none;"></span>
+      <span class="Lines YearlyVLines Vline1" style="margin-left: -43px;"></span>
+      <span class="Lines YearlyVLines Vline2" style="margin-left: -14px;"></span>
+      <span class="Lines YearlyVLines Vline3" style="margin-left: 15px;"></span>
+      <span class="Lines YearlyVLines Vline4" style="margin-left: 43px;"></span>
+    
+      <span class="CalPins YearlyCalTopPin" style="margin-left: -47px;" [ngClass]="{'YearlyCalTopPinActive': YearlyCalTopPinActiveVal}"></span>
+      <span class="CalPins YearlyCalBottomPin" style="margin-left: -52px;"></span>
+      <span class="CalPins YearlyCalTopPin" style="margin-left: 38px;" [ngClass]="{'YearlyCalTopPinActive': YearlyCalTopPinActiveVal}"></span>
+      <span class="CalPins YearlyCalBottomPin" style="margin-left: 33px;"></span> 
+      <span class="YearlyPlanBG" [ngClass]="{'YearlyPlanBGActive': YearlyPlanBGActiveVal}"></span>
+      <span class="YearlyPlanBGSep" [ngClass]="{'YearlyPlanBGSepActive': YearlyPlanBGSepActiveVal}"></span>
+      <span class="YearlyPlanTxt" [ngClass]="{'YearlyPlanTxtActive': YearlyPlanTxtActiveVal}">Yearly Plan</span>
+      <span class="YearlyRs" [ngClass]="{'YearlyRsActive': YearlyRsActiveVal}">₹ 1000/-</span>
+      <span class="YearlyTick" [ngClass]="{'YearlyTickDisp': YearlyTickDispVal}"><img src="/assets/plan-tick.png" /></span>
+    </div>
+    <!--***********************************************************************************************************************-->
+    <div class="MonthlyPlanCal" [ngClass]="{'MonthlyPlanCalActive': MonthlyPlanCalActiveVal}" (click)="MonthlyClick()">
+      <span class="Lines MonthlyHLines Hline1" style="margin-top: 61px;"></span>
+      <span class="Lines MonthlyHLines Hline2" style="margin-top: 84px;"></span>
+      <span class="Lines MonthlyHLines Hline3" style="margin-top: 110px;"></span>
+      <span class="Lines MonthlyHLines Hline3" style="margin-top: 126px;display: none;"></span>
+      <span class="Lines MonthlyVLines Vline1" style="margin-left: -43px;"></span>
+      <span class="Lines MonthlyVLines Vline2" style="margin-left: -14px;"></span>
+      <span class="Lines MonthlyVLines Vline3" style="margin-left: 15px;"></span>
+      <span class="Lines MonthlyVLines Vline4" style="margin-left: 43px;"></span>
+      <span></span>
+      <span class="CalPins MonthlyCalTopPin" style="margin-left: -47px;" [ngClass]="{'MonthlyCalTopPinActive': MonthlyCalTopPinActiveVal}"></span>
+      <span class="CalPins MonthlyCalBottomPin" style="margin-left: -52px;"></span>
+      <span class="CalPins MonthlyCalTopPin" style="margin-left: 38px;"  [ngClass]="{'MonthlyCalTopPinActive': MonthlyCalTopPinActiveVal}"></span>
+      <span class="CalPins MonthlyCalBottomPin" style="margin-left: 33px;"></span> 
+      <span class="MonthlyPlanBG" [ngClass]="{'MonthlyPlanBGActive': MonthlyPlanBGActiveVal}"></span>
+      <span class="MonthlyPlanBGSep" [ngClass]="{'MonthlyPlanBGSepActive': MonthlyPlanBGSepActiveVal}"></span>
+      <span class="MonthlyPlanTxt" [ngClass]="{'MonthlyPlanTxtActive': MonthlyPlanTxtActiveVal}">Monthly Plan</span>
+      <span class="MonthlyRs" [ngClass]="{'MonthlyRsActive': MonthlyRsActiveVal}">₹ 100/-</span>
+      <span class="YearlyTick" [ngClass]="{'MonthlyTickDisp': MonthlyTickDispVal}"><img src="/assets/plan-tick.png" /></span>
+    </div>
+  </div>
+  <div class="prcdpymntdv">
+      <button mat-raised-button color="primary" class="signin-btnpymt" (click)="proceedToPayment()">Proceed to payment</button>
+  <span class="forgot-pass form-linkspymnt"><a (click)="callAllreadyMember();ngOnInit()">Cancel</a></span>
+  </div>
+</div>
+
+    <div class="formdiv" *ngIf="forgotPass">
+    <form class="example-form">
+      <span class="fpass">Having trouble logging in?</span>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" [(ngModel)]="frgtPwdEmail" [formControl]="FpwdemailControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="FpwdemailControl.hasError('email') && !FpwdemailControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="FpwdemailControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="signin-btn" (click)="verifyEmailAndOTP()" [disabled]="FpwdemailControl.hasError('email')">Reset Password</button>
+    </form>
+    <span class="forgot-pass form-links"><a (click)="callAllreadyMember();ngOnInit()">Back to Sign In</a></span>
+    </div>
+
+        <div class="formdiv" *ngIf="alreadyReg">
+    <form class="example-form">
+      <span class="alregstd">You are already registered with Sententia. Click on Sign in to continue..</span>
+      
+      <button mat-raised-button color="primary" class="signin-btn" (click)="callAllreadyMember();ngOnInit()">Sign In</button>
+    </form>
+    </div>
+
+            <div class="formdiv" *ngIf="notRegistered">
+    <form class="example-form">
+      <span class="alregstd">You are not registered with Sententia. Click on Register now to continue..</span>
+      
+      <button mat-raised-button color="primary" class="signin-btn" (click)="callRegister();ngOnInit()">Register now</button>
+    </form>
+    </div>
+
+
+        <div class="formdiv" *ngIf="verifyOTP">
+    <form class="example-form">
+      
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter OTP" maxlength="6" type="number" [(ngModel)]="verifyThisOTP" [formControl]="verifyOTPControl" [errorStateMatcher]="matcher">
+        
+        <mat-error *ngIf="verifyOTPControl.hasError('required')">
+          OTP is <strong>required</strong>
+        </mat-error>
+
+      </mat-form-field>
+      <span *ngIf="wrongOTP" [ngStyle]="{'color': txtclr}">OTP is <strong>Incorrrect</strong></span>
+      <div class="verifybtnright">
+        <button mat-raised-button color="primary" class="verify-btn" (click)="callVerifyOTP()" [disabled]="verifyOTPControl.hasError('required')">Verify OTP</button>
+      <a (click)="resendOTP()" title="Resend OTP"><i class="refresh fa fa-repeat" aria-hidden="true"></i></a>
+      </div>
+      
+    </form>
+    <span class="forgot-pass bcktosgnin"><a (click)="callAllreadyMember();ngOnInit()">Back to Sign In</a></span>
+    </div>
+            <div class="formdiv" *ngIf="verifyOTPFrgtpwd">
+    <form class="example-form">
+      
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter OTP" maxlength="6" type="text" [(ngModel)]="frgtpwdVerifyOTP" [formControl]="verifyOTPControl" [errorStateMatcher]="matcher">
+        
+        <mat-error *ngIf="verifyOTPControl.hasError('required')">
+          OTP is <strong>required</strong>
+        </mat-error>
+
+      </mat-form-field>
+      <span *ngIf="wrongOTP" [ngStyle]="{'color': txtclr}">OTP is <strong>Incorrrect</strong></span>
+      <button mat-raised-button color="primary" class="signin-btn" (click)="callVerifyOTPFPwd()" [disabled]="verifyOTPControl.hasError('required')">Verify OTP</button>
+      <a (click)="resendOTPFPwd()" title="Resend OTP"><i class="refresh fa fa-repeat" aria-hidden="true"></i></a>
+    </form>
+    <span class="forgot-pass form-links"><a (click)="callAllreadyMember();ngOnInit()">Back to Sign In</a></span>
+    </div>
+
+    <div class="formdiv" *ngIf="confirmPassword">
+    <form class="example-form">
+      
+      <mat-form-field class="example-full-width" style="margin-top:15px;">
+        <input matInput placeholder="Password" name="captcha" [(ngModel)]="password1" [formControl]="passwdFormControl" [type]="hide ? 'password' : 'text'" [errorStateMatcher]="matcher" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="passwdFormControl.hasError('required')">
+          Password is <strong>required</strong></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" style="margin-top:15px;">
+        <input matInput placeholder="Comfirm Password" name="captcha" [(ngModel)]="password1Confirm" [formControl]="passwdFormControl" [type]="hide ? 'password' : 'text'" [errorStateMatcher]="matcher" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="passwdFormControl.hasError('required')">
+          Password is <strong>required</strong></mat-error>
+      </mat-form-field>
+
+
+      <button mat-raised-button color="primary" class="signin-btn" (click)="changePassword()" [disabled]="password1!=password1Confirm">Change Password</button>
+    </form>
+    <span class="forgot-pass form-links"><a (click)="callAllreadyMember();ngOnInit()">Back to Sign In</a></span>
+    </div>
+</div>
+
+</div>
+<div class="container featuredivbckclr" id="featureDiv">
+      <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+          <span class="featrhdng">Features</span>
+      </div>
+      <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+          <div fxLayout="33%" class="dspblk">
+              <div>
+                <img src="./assets/good_writing.png" class="featureimg" width="132px" height="132px">
+              </div>
+              <div class="featrtxt">
+                <span class="featurehdrcnt">Good Writing Habit Formation</span>
+                <span class="featurecnt">Don’t just correct my grammar, correct my writing style! Make formal writing a habit.</span>
+              </div>
+          </div>
+          <div fxLayout="33%" class="dspblk">
+              <div>
+                <img src="./assets/learning.png" class="featureimg" width="132px" height="132px">
+              </div>
+              <div class="featrtxt">
+                <span class="featurehdrcnt">Customized Learning Materials</span>
+                <span class="featurecnt">Thorough analysis of the individual writing style enables customized learning materials to ensure growth of the individual over a period of time.</span>
+              </div>
+          </div>
+          <div fxLayout="33%" class="dspblk">
+              <div>
+                <img src="./assets/how_and_why.png" class="featureimg" width="132px" height="132px">
+              </div>
+              <div class="featrtxt">
+                <span class="featurehdrcnt">How & Why Explained</span>
+                <span class="featurecnt">Explain my writing, and not just fix my output! Tell me with examples, I’ll master!</span>
+              </div>
+          </div>
+      </div>
+      <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+          <div fxLayout="33%" class="dspblk">
+              <div>
+                <img src="./assets/domain.png" class="featureimg" width="132px" height="132px">
+              </div>
+              <div class="featrtxt">
+                <span class="featurehdrcnt">Domain Specific</span>
+                <span class="featurecnt">Considers domain specific words and phrases to provide context aware analysis results</span>
+              </div>
+          </div>
+          <div fxLayout="33%" class="dspblk">
+              <div>
+                <img src="./assets/analyze_dash.png" class="featureimg" width="132px" height="132px">
+              </div>
+              <div class="featrtxt">
+                <span class="featurehdrcnt">Analysis Dashboard</span>
+                <span class="featurecnt">Provides document quality indicator, Analytics on the issues found and the Charts depicting the improvements over time.</span>
+              </div>
+          </div>
+          <div fxLayout="33%" class="dspblk">
+              <div>
+                <img src="./assets/publish.png" class="featureimg" width="132px" height="132px">
+              </div>
+              <div class="featrtxt">
+                <span class="featurehdrcnt">Publish & Collaborate </span>
+                <span class="featurecnt">Faculties can see consolidated reports like how overall students are improving their formal writing skills and also individual analysis reports.</span>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div  class="container principlediv " id="processDiv">
+      <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+          <div fxLayout="50%" class="">
+              <div>
+                <img src="./assets/principle.png" class="prncipleimg" width="100%" height="auto">
+              </div>
+          </div>
+          <div fxLayout="50%" class="mrglftprcs">
+              <div class="prnplebx">
+                  <span  id="principleid" class="prncplehdr">Process</span>
+                  <ol class="mrgntpprcs">
+                    <li class="prncpledatalist1"><span class="Line-3">Upload</span> Document to Sententia</li>
+                    <li class="prncpledatalist2">Document Analysis : <span class="Line-3">Suggestions</span>, <span class="Line-3">Guidelines</span>, <span class="Line-3">Bugs</span> and <span class="Line-3">Analysis</span> charts will be provided</li>
+                    <li class="prncpledatalist2">User will View, Learn, Comment and <span class="Line-3">Assess</span> the document provided by Sententia</li>
+                    <li class="prncpledatalist2">User updates the Draft document again for <span class="Line-3">improved</span> version.</li>
+                    <li class="prncpledatalist1"><span class="Line-3">Publish</span> if user is happy with the quality.</li>
+                  </ol>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+        <div class="abouthdng">About</div>
+      </div>
+
+      <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+          <div class="abouthdngsub">Sententia improves your formal writing over a period of time.</div>
+      </div>
+
+
+      <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+        <div fxLayout="50%">
+          <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+            <div class="squarebox" id="aboutDiv">
+                <img src="./assets/icon-slice@3x.png" class="marg13 dime1">
+            </div>
+            <div class="aboutcnt">
+                <p class="abtdes1">Sententia makes use of Habit Formation Framework to derive a learning plan for making formal writing a habit. It analyses the document to understand the Routine, gets the Cue and provides ways to supplant old vices with new routines.</p>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="50%">
+          <div fxLayout fxLayout.xs="column" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+            <div class="squarebox">
+                <img src="./assets/1icon-slice@3x.png" class="marg40 dime2">
+            </div>
+            <div class="aboutcnt">
+                <p class="abtdes1">The Analysis output consists of different categories of Grammatical Errors, Formal writing Style Guidelines or Suggestions and Contextual Errors. The dashboard provides the overall and detailed view of progress made over time using easy to follow visuals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+
+
+    <div class="slider" style="margin-top: 3%;">
+      <div
+        ng2-carouselamos
+        class="slides-wrapper"
+        [items]="items"
+        [width]="900"
+        [$prev]="prev"
+        [$next]="next"
+        [$item]="item"
+      >
+      </div>
+
+      <ng-template #prev>
+      <img src="./assets/images/left-arrow.png" id="left" style="height: 50px;width: auto;"/>
+    </ng-template>
+    <ng-template #next>
+      <img src="./assets/images/right-arrow.png" id="right" style="height: 50px;width: auto;"/>
+    </ng-template>
+    <ng-template #item let-item let-i="index">
+
+        <div class="items">
+          <img src="{{ item.name }}" style="height: 250px;width: 170px;">
+        </div>
+
+    </ng-template>
+<!--<button (click)="scrollTo('#principleid', '#home')">click me</button>-->
+</div>
+    <div class="container ACENTER mrgntpabtcnt">
+      <div class="abtlinecnt">
+        <span>There are no standards or agreements for formal writing style.<br>
+        The rules are developed based on the content from these books used as guidance for formal writing</span>
+      </div>
+    </div>
+    <div class="container ACENTER mrgntpprtnr">
+      <img src="./assets/partner1.png" width= "163px" height="51px">
+      <img src="./assets/partner2.png" width= "163px" height="51px">
+      <img src="./assets/partner3.png" width= "163px" height="51px">
+      <img src="./assets/partner4.png" width= "163px" height="51px">
+    </div>
+
+</div>
+

@@ -1,0 +1,64 @@
+.margbtm5{
+	margin-bottom: 0%;
+}
+.justify{
+	text-align: justify;
+}
+.margtpbtm{
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+@media only screen and (min-width: 320px){
+.sent_logo{
+	width: 28%;
+	height: auto;
+	margin: 2% 0;
+}
+
+.na_logo{
+	width: 25%;
+	height: auto;
+	margin: 2% 0;
+}
+}
+@media only screen and (min-width: 870px){
+.sent_logo{
+	width: 20%;
+	height: auto;
+	margin: 2% 0;
+}
+
+.na_logo{
+	width: 10%;
+	height: auto;
+	margin: 2% 0;
+}
+}
+
+.abt_style{
+	text-align: center;
+	font-size: 28px;
+	font-weight: 600;
+	margin-bottom: 3%;
+}
+.content_style{
+	font-size: 16px;
+	text-align: justify !important;
+}
+.abtus_txt{
+	color: #3f75a1;
+	font-size: 30px;
+}
+@media only screen and (min-width: 320px){
+  .margtp{
+	margin-top: 16%;
+	margin-bottom: 50%;
+}
+
+}
+@media only screen and (min-width: 870px){
+.margtp{
+	margin-top: 7%;
+	margin-bottom: 5%;
+}
+}

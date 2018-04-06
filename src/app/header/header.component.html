@@ -1,0 +1,50 @@
+<div>
+  <mat-toolbar color="primary" class="Webhead">
+    <span style="margin-left:10% !important;"><img (click)="homeClick()" class="senlogo img-responsive" src="assets/sententia.png" />
+    </span>
+    <span class="example-spacer"></span>
+<div fxShow="true" fxHide.lt-md="true" style="margin-right:10% !important;" class="HeadLinks">
+      <!--The following menu items will be hidden on both SM and XS screen sizes-->
+      <a mat-button (click)="homeClick()">Home<span class="hoverBorder"></span></a>
+      <a mat-button (click)="gotoFeature('featureDiv')" *ngIf="featuresHDR">Features<span class="hoverBorder"></span></a>
+      <a mat-button (click)="gotoFeature('processDiv')" *ngIf="principleHDR">Process<span class="hoverBorder"></span></a>
+      <a mat-button (click)="gotoFeature('aboutDiv')" *ngIf="aboutHDR">About<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/userlogstatus' *ngIf="userlogHDR">Userlog Stats<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/dashboard' *ngIf="analysisHDR">Analysis<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/my-learning' *ngIf="mylearningHDR">My Learning<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/profile' *ngIf="myaccountHDR">My Account<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/admin-profile' *ngIf="myaccountadminHDR">My Account<span class="hoverBorder"></span></a>
+      <a mat-button (click)="scrollReset()" routerLink='/faq' *ngIf="faqHDR">FAQ<span class="hoverBorder"></span></a>
+      <a mat-button (click)="scrollReset()" routerLink='/about-us' *ngIf="aboutusHDR">Who We Are<span class="hoverBorder"></span></a>
+      <a mat-button (click)="scrollReset()" routerLink='/contact-us' *ngIf="contactusHDR">Contact Us<span class="hoverBorder"></span></a>
+      <a mat-button *ngIf="signoutHDR" (click)="SignOut()">Sign out<span class="hoverBorder"></span></a>
+    </div>
+    <div fxShow="true" fxHide.gt-sm="true">
+      <a mat-button style="text-decoration:none;" (click)="sidenav.open()">&#x2630;</a>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav position="end" opened="false" mode="push" fxLayout="column">
+      <div fxLayout="column" style="margin-top: 40%;" class="HeadLinks">
+      <a mat-button (click)="homeClick()" (click)="sidenav.close()">Home<span class="hoverBorder"></span></a>
+      <a mat-button (click)="gotoFeature('featureDiv')" *ngIf="featuresHDR" (click)="sidenav.close()">Features<span class="hoverBorder"></span></a>
+      <a mat-button (click)="gotoFeature('processDiv')" *ngIf="principleHDR" (click)="sidenav.close()">Process<span class="hoverBorder"></span></a>
+      <a mat-button (click)="gotoFeature('aboutDiv')" *ngIf="aboutHDR" (click)="sidenav.close()">About<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/userlogstatus' *ngIf="userlogHDR" (click)="sidenav.close()">Userlog Stats<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/dashboard' *ngIf="analysisHDR" (click)="sidenav.close()">Analysis<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/my-learning' *ngIf="mylearningHDR" (click)="sidenav.close()">My Learning<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/profile' *ngIf="myaccountHDR" (click)="sidenav.close()">My Account<span class="hoverBorder"></span></a>
+      <a mat-button routerLink='/admin-profile' *ngIf="myaccountadminHDR" (click)="sidenav.close()">My Account<span class="hoverBorder"></span></a>
+      <a mat-button (click)="scrollReset()" routerLink='/faq' *ngIf="faqHDR" (click)="sidenav.close()">FAQ<span class="hoverBorder"></span></a>
+      <a mat-button (click)="scrollReset()" routerLink='/about-us' *ngIf="aboutusHDR" (click)="sidenav.close()">Who We Are<span class="hoverBorder"></span></a>
+      <a mat-button (click)="scrollReset()" routerLink='/contact-us' *ngIf="contactusHDR" (click)="sidenav.close()">Contact Us<span class="hoverBorder"></span></a>
+      <a mat-button  *ngIf="signoutHDR" (click)="SignOut()" (click)="sidenav.close()">Sign out<span class="hoverBorder"></span></a>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content fxFlexFill style="overflow: auto;">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

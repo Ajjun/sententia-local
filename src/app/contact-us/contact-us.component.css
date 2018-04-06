@@ -1,0 +1,87 @@
+.margtp10{
+	margin-top: 10%;
+}
+.margbtm5{
+	margin-bottom: 5%;
+}
+.justify{
+	text-align: justify;
+}
+@media only screen and (min-width: 320px){
+.cnt_style{
+	text-align: center;
+	font-size: 28px;
+	font-weight: 600;
+	margin-top: 8%;
+	margin-bottom: 3%;
+}
+}
+
+@media only screen and (min-width: 870px){
+.cnt_style{
+	text-align: center;
+	font-size: 28px;
+	font-weight: 600;
+	margin-top: 0%;
+	margin-bottom: 3%;
+}
+}
+@media only screen and (min-width: 320px){
+.mrgnbtmfrmbl{
+	margin-bottom: 50% !important;
+}
+}
+@media only screen and (min-width: 870px){
+.mrgnbtmfrmbl{
+	margin-bottom: 5% !important;
+}
+}
+
+.form_style{
+	padding: 25px 25px;
+	font-size: 14px;
+	line-height: 1.428;
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.ACENTR{
+	text-align: center;
+}
+.msgbox_height{
+	height: 120px;
+	width: 100%;
+	resize: none;
+	padding: 8px 10px;
+	font-size: 14px;
+	line-height: 1.428;
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.margtpbtm5{
+	margin: 5% 0;
+}
+.cntus_txt{
+	color: #3f75a1;
+	font-size: 30px;
+}
+
+/*.footer_fixed{                commented
+  position: absolute;
+  right: 0;
+  left: 0;
+}*/
+@media only screen and (min-width: 320px){
+  .margtp{
+	margin-top: 16%;
+}
+
+}
+@media only screen and (min-width: 870px){
+.margtp{
+	margin-top: 7%;
+}
+}

@@ -1,0 +1,142 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.form-class-1 {
+  margin-top: -15px !important;
+}
+
+.form-class-2 {
+  margin-top: -3px !important;
+}
+
+.main {
+  margin-top: 0px !important;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.formdiv {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  width: 55%;
+  margin-left: 25%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  background-color: #fff;
+  border-radius: 1%;
+
+}
+
+.gif-img {
+  left: 30px !important;
+}
+
+.form-mat {
+  margin-top: 32px !important;
+}
+
+.g-recaptcha {
+  margin-top: 25px;
+}
+
+.signin-btnReg {
+  width: 50%;
+  margin-top: 30px;
+  float: right;
+}
+
+.abt-sen-txt {
+  width:75%;
+  margin:0 auto;
+  text-align: center;
+  color: #3c3c3c;
+  padding-bottom: 5px;
+}
+
+
+.forgot-pass {
+  float: left;
+  margin-top: 40px !important;
+}
+
+.form-links {
+  font-size: 13px;
+  margin-top: 25px;
+}
+
+.form-links a {
+  color: rgb(46, 89, 132);
+  text-decoration: none;
+}
+
+.form-links a:hover {
+  color: rgb(199, 39, 51);
+  text-decoration: none;
+}
+
+.abt-img {
+  margin:0 auto;
+  margin-top: 70px;
+}
+
+.abt-img img {
+  border-radius:10px;
+  height:399px;
+  width: 580px;
+  box-shadow: 0px 0px 3px 1px #989696;
+}
+
+.agree {
+  margin-top: 30px !important;
+  display: block !important;
+  margin-left: 5px;
+}
+
+.agree a {
+  color: rgb(46, 89, 132);
+  text-decoration: none;
+}
+
+.agree a:hover {
+  color: rgb(199, 39, 51);
+  text-decoration: none;
+}
+
+.cap-input {
+  width: 50px;
+  text-align: center;
+  height: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.refresh {
+  color: #30679e;
+  cursor: pointer;
+}
+
+.fa-repeat {
+  margin-top: -10px;
+}
+
+.mycaptcha {
+  margin-top: 30px;
+  border: 1px solid;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px 0px #e9e4e4;
+  height: 72px;
+  background-color: #f0f0f0;
+}
+
+.antibot {
+  margin-top: 7px;
+  text-align: center;
+}

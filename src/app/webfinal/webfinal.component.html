@@ -1,0 +1,135 @@
+      <mat-progress-bar *ngIf="progressbar"
+          class="progressBar"
+          color="primary"
+          mode="indeterminate">
+      </mat-progress-bar>
+<div class="container minHeight" id="main" style="margin-top: 9%; margin-bottom: 5%">
+  <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+    <div class="example-container mat-elevation-z8" fxFlex="37%" *ngIf="mainTable">
+      <div class="example-header">
+        <span class="tablehead">Uploaded Documents</span>
+        <mat-form-field class="searchInp">
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search" autocomplete="off">
+        </mat-form-field>
+      </div>
+
+      <mat-table class="docname-table" #table [dataSource]="dataSource" matSort>
+
+    <!-- Weight Column -->
+        <ng-container matColumnDef="docname">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> File Name </mat-header-cell>
+          <mat-cell *matCellDef="let userData" class="rowcursor"> {{userData.nam}} </mat-cell>
+        </ng-container>
+
+    <!-- Symbol Column -->
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Date and Time </mat-header-cell>
+          <mat-cell *matCellDef="let userData"  class="rowcursor"> {{userData.date}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" class="rowbg"
+                [ngClass]="{'highlight': selectedRowIndex == row.id}"
+                (click)="highlight(row)" title="Click to see analysed result">
+          </mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+    </div>
+    <div fxFlex="59.9%" *ngIf="lineDisplayValue">
+      <ngx-charts-line-chart  class="linegraph"
+        [view]="linegraphview"
+        [scheme]="colorSchemeLineGraph"
+        [results]="newGraph"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegendLineGraph"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [autoScale]="autoScale"
+        [yScaleMax]="yMax"
+        [yScaleMin]="yMin">
+      </ngx-charts-line-chart>
+    </div>
+      
+    <div fxFlex="22%" *ngIf="pieGaugeDisplayValue">
+      <ngx-gauge  [type]="gaugeType" class="gauge" thick="20" cap="round" size = "230"
+           [value]="docQuality"
+           [label]="gaugeLabel"
+           [append]="gaugeAppendText" [thresholds]="thresholdConfig">
+      </ngx-gauge>
+      <div class="TotSen TotSenErr ACENTER" [ngClass]="{'TotSenErrDisplayNone': TotSenErrDisplayValue}">
+              Total number of sentences : <span style="margin-left:5px;">{{TotSen}}</span>
+      </div>
+      <div class="TotErr TotSenErr ACENTER" [ngClass]="{'TotSenErrDisplayNone': TotSenErrDisplayValue}">
+                  Total number of mistakes : <span style="margin-left:12px;">{{TotErr}}</span>
+      </div>
+    </div>
+    
+    <div fxFlex="37%" *ngIf="pieGaugeDisplayValue">
+      <ngx-charts-pie-chart  class="piegraph"
+        [view]="piegraphview"
+        [scheme]="colorSchemePieeGraph"
+        [results]="single"
+        [legend]="showLegendPieGraph"
+        [explodeSlices]="explodeSlices"
+        [labels]="showLabels"
+        [doughnut]="doughnut"
+        [gradient]="gradient"
+        arcWidth="0.4"
+        (select)="OnPieSelect($event)">
+      </ngx-charts-pie-chart>
+    </div>
+  </div>
+
+      <div fxLayout fxLayout.xs="column" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+        <div fxFlex="50%" *ngIf="SugTableDisplayValue" class="example-container mat-elevation-z8 SugTable">
+          <div class="Sugheader">
+              <span class="tablehead">{{ sugTabHead }}<i class="fa fa-times-circle SugTabCls" (click)="SugTabCls()"></i></span>
+          </div>
+
+  <mat-table class="docname-table" #table [dataSource]="sugTabDataSource" matSort>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Column">
+		<mat-cell *matCellDef="let sugTabdata" class="rowcursor"> <span class="errsen">{{sugTabdata.errSen}}</span><br>
+			<span *ngIf="Errors"> 
+          <span *ngFor="let sug of sugTabdata.sugSen[0]; let i = index" class="rowbg sugsen" title="Click for more." (click)="SugClick(sugTabdata, i)">{{sug}}</span></span>
+      <span *ngIf="spellCheckErr">
+      <span *ngFor="let sug of sugTabdata.sugSen; let i = index" class="rowbg sugsen" title="Click for more." (click)="SpellClick(sug, i)">Error word :- {{sug[0]}}<br>Suggestions :- {{sug[1]}}</span>
+    </span>
+      </mat-cell>
+    </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedSugColumns" class="Sugrow" style="display:none;"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedSugColumns;" style="padding: 0 8px !important;" (click)="Sughighlight(row)" >
+            </mat-row>
+          </mat-table>
+        </div>
+
+        <div fxFlex="50%" class="SugBox" *ngIf="SugBoxisplayValue">
+            <span class="SugBoxHead">Suggestion Box<i class="fa fa-times-circle SugBoxCls" (click)="SugBoxCls()"></i></span>
+          <div class="SugBoxBody">
+            <div class="Sugboxmain1 Sugboxmain">
+              <span class="DocErrHead MainHead">{{mistakeHead}}</span>
+              <span id="DocError" class="SugBoxSpan">{{DocErr}}</span>
+          </div>
+          <div class="Sugboxmain2">
+            <span class="DocSugHead MainHead">{{suggestionHead}}</span>
+            <span id="DocSug" class="SugBoxSpan">{{DocSug}}</span>
+          </div>
+          <div *ngIf="examples" class="Sugboxmain3">
+            <span class="DocExampleHead MainHead">Examples</span>
+            <span id="DocExample" class="SugBoxSpan">{{DocExample}}</span>
+          </div>
+          <div class="Sugboxmain4">
+            <span class="FeedbackHead MainHead">Feedback</span>
+            <textarea calss="FeedBackText" placeholder="Enter your feedback here"></textarea>
+          </div>
+            <button mat-raised-button color="primary" class="SugBoxBtn">Submit</button></div>
+        </div>
+      </div>
+  
+</div>

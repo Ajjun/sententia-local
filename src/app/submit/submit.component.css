@@ -1,0 +1,322 @@
+
+@media only screen and (min-width: 320px){
+.AnalyseText {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20%;
+    font-size: 26px;
+}
+}
+
+@media only screen and (min-width: 780px){
+.AnalyseText {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 7%;
+    font-size: 26px;
+}
+}
+
+.FileName {
+    color: rgb(46, 89, 132) !important;
+}
+
+.gauge {
+    margin-top: 75px;
+    margin-left: 85px;
+}
+
+.PieChartName {
+  margin-left: 37%;
+  font-size: 17.6923px;
+}
+
+@media only screen and (min-width: 320px){
+.DocDownload{
+    text-align: center;
+    margin:2% 0;
+    font-size: 16px;
+    margin-top: 2%;
+}
+}
+
+@media only screen and (min-width: 780px){
+.DocDownload{
+    text-align: center;
+    margin:2% 0;
+    font-size: 16px;
+    margin-top: 30%;
+}
+}
+
+.DownloadBtn {
+  margin-left: 40%;
+  margin-right: auto;
+}
+
+.DownloadBtn button {
+    background: rgb(46, 89, 132) !important;
+}
+
+.infoFlex {
+  margin-bottom: 4%;
+}
+
+@media only screen and (min-width: 320px){
+.infoDiv{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 3% 1%;
+    min-height: 325px;
+    overflow-x: hidden;
+    max-height: 320px;
+    background: rgba(241, 240, 240, 0.5);
+    transition: 0.2s;
+}
+}
+
+@media only screen and (min-width: 780px){
+.infoDiv{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 65%;
+    margin: 3% 0;
+    min-height: 350px;
+    overflow-x: hidden;
+    max-height: 320px;
+    background: rgba(241, 240, 240, 0.5);
+    transition: 0.2s;
+}
+}
+
+.InfoHead {
+    opacity: 1;
+    margin-top: 10px;
+    display: block;
+    color: rgb(46, 89, 132) !important;
+    border-bottom: 0.097em solid rgba(0,0,0,.12);
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+.InfoTerm {
+    font-weight: bold;
+    color: rgb(46, 89, 132) !important;
+}
+
+.TermInfo {
+}
+
+.InfoItems {
+  display: block;
+  padding: 7px;
+  margin-left: 10px;
+}
+
+.Info {
+  display: block;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.InfoAfterClick {
+    min-height: 432px;
+    margin: 3% 1%;
+    max-height: 432px;
+}
+
+.Sugrow .mat-row {
+  padding: 0, 8px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.SugTable {
+  min-height: 432px;
+  max-height: 432px;
+  margin: 3% 1%;
+}
+
+.SugTable .mat-table{
+  background-color: rgba(255, 255, 255, 0);
+  overflow-x: hidden;
+}
+
+.SugTableDisplayNone {
+  display: none;
+}
+
+.errsen {
+  color: #ef4f04;
+  display:block;
+  padding: 10px;
+}
+
+.sugsen {
+  color: #048def;
+  display:block;
+  padding:11px;
+  margin-top: -18px;
+  margin-bottom: 10px;
+}
+
+.Sugheader {
+  min-height: 45px;
+  padding: 8px 35px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  text-align: center;
+}
+
+
+.tablehead {
+  display: inline-block;
+  color: #406d9b;
+  margin-top: 5px;
+}
+
+.SugTabCls {
+  float: right;
+  margin-top: 2%;
+  color: #406d9b;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.docname-table mat-header-cell {
+  font-size: 15px !important;
+  color: #406d9b !important;
+  overflow-x:hidden !important;
+}
+
+.rowbg {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.rowbg:hover {
+  background-color: rgba(147, 142, 142, 0.1);
+}
+
+.SugBoxDisplayNone {
+  display: none;
+}
+
+.SugBox {
+  overflow:hidden;
+  margin: 3% 1%;
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+
+.SugBoxHead {
+  text-align: center;
+  display: inline-block;
+  padding-bottom: 12px;
+  padding-top: 13px;
+  color: #406d9b;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  width: 100%;
+}
+
+.SugBoxCls {
+  color: #406d9b;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5%;
+}
+
+.SugBoxBody {
+  overflow-x:hidden;
+  height: 380px;
+}
+
+.Sugboxmain4 textarea {
+  resize:none;
+  width:90%;
+  margin:0 auto;
+  display: block;
+  height:50px;
+  margin-top:8px;
+}
+
+.DocErrHead {
+  color: #555352;
+}
+
+.MainHead {
+  width: 90%;
+  margin:0 auto;
+  display: block;
+  padding: 5px;
+}
+
+.SugBoxSpan {
+    overflow-x: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    width: 90%;
+    margin: 0 auto;
+    font-size: 13px;
+    padding-bottom: 2%;
+}
+
+.SugBoxSpan {
+    overflow-x: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    width: 90%;
+    margin: 0 auto;
+    font-size: 13px;
+    padding-bottom: 2%;
+}
+
+.DocSugHead {
+  color: #555352;
+}
+
+
+.DocExampleHead {
+  color: #555352;
+}
+
+.FeedbackHead {
+  color:#406d9b;
+}
+
+.SugBoxBtn {
+  margin-top: 10px;
+  margin-left: 40%;
+  margin-bottom: 10px;
+}
+
+#DocError {
+  color: #ef4f04;
+}
+
+#DocSug {
+  color: #048def;
+}
+
+.InfoDisplayNone {
+  display: none;
+}
+
+.GaugeShow  {
+  display: none;
+}
+
+.TotSenErr {
+  padding: 2%;
+}
+
+.TotSen {
+  margin-top: -12%;
+}

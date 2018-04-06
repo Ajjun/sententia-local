@@ -1,0 +1,60 @@
+<div class="main minHeight">
+  <mat-grid-list cols="2">
+  <mat-grid-tile class="gif-img">
+    <div class="abt-img">
+      <img class="img-responsive " src="/assets/the-guy.png" />
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile class="form-mat">
+    <div class="formdiv">
+    <form class="example-form" (ngSubmit)="check()">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" data-is-rendered="true" [(ngModel)]="username" [formControl]="nameFormControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Name is <strong>required</strong>
+          </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width form-class-1">
+        <input matInput placeholder="Email" [(ngModel)]="useremail" [formControl]="emailFormControl"
+               [errorStateMatcher]="matcher">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width form-class-2">
+        <input matInput placeholder="Password" [(ngModel)]="userpasswd" [formControl]="passwdFormControl" [type]="hide ? 'password' : 'text'" [errorStateMatcher]="matcher">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="passwdFormControl.hasError('required')">
+          Password is <strong>required</strong></mat-error>
+      </mat-form-field>
+
+      <div [className]="'mycaptcha'" id="captch" [ngStyle]="{'border-color': errclr}">
+        <div class="antibot justify-content-between">
+        	<!--<span>{{ code1 }} + {{ code2 }} = </span>-->
+          <input class="cap-input" [(ngModel)]="num1" [disabled]="random != 1" name="inp1" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req1> +
+          <input class="cap-input" [(ngModel)]="num2" [disabled]="random != 2" name="inp2" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req2> =
+        	<input class="cap-input" [(ngModel)]="num3" [disabled]="random != 3" name="inp3" maxlength ="2" (input)="checkAnswer()" autocomplete="off" [required]=req3>&nbsp;&nbsp;&nbsp;
+          <a (click)="ngOnInit()"><i class="refresh fa fa-repeat" aria-hidden="true"></i></a>
+            <!--<p><span>random = {{ random }}</span></p>-->
+            <p><span [ngStyle]="{'color': captxt}">{{ output }}</span></p>
+        </div>
+      </div>
+
+    <mat-checkbox color="primary" class="agree" [formControl]="checkbox" required>I agree to the <a href="#" target="_blank">terms and conditions</a></mat-checkbox>
+    <span class="forgot-pass form-links"><a [routerLink]="['/signin']">Already a Member?</a></span>
+    <button mat-raised-button color="primary" class="signin-btn">Register</button>
+      </form>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list class="abt-sen-txt" cols="1" rowHeight="100px">
+<mat-grid-tile>
+  <div class="about-sen"><p>"Sententia is a web based writing assistive tool which enables, by providing suggestions with explanation, scholars writing technical papers/reports according to the styles, guidelines and procedures of formal writing. The most important goal in writing a paper is to make yourself understood by the intended audience"<span class="glyphicons glyphicons-eye-open"></span></p><br>
+	</div>
+</mat-grid-tile>
+</mat-grid-list>
+</div>

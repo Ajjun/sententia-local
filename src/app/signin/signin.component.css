@@ -1,0 +1,957 @@
+
+@media only screen and (min-width: 320px){
+.senttext{
+font-family: "Segoe UI Light","Segoe UI";
+    font-size: 36px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: -0.2px;
+    text-align: left;
+    margin-top: 20%;
+    color: #3f75a1;
+    margin-left: 0%;
+}
+}
+@media only screen and (min-width: 780px){
+.senttext{
+    font-family: "Segoe UI Light","Segoe UI";
+    font-size: 36px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: #3f75a1;
+    margin-left: 10%;
+}
+
+}
+@media only screen and (min-width: 320px){
+.sentsubtxt{
+  margin-left: 0%;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: -0.1px;
+  text-align: left;
+  color: #8a9ba9;
+}
+}
+@media only screen and (min-width: 780px){
+.sentsubtxt{
+  margin-left: 10%;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: -0.1px;
+  text-align: left;
+  color: #8a9ba9;
+}
+}
+.signinbckgrndimg{
+  position: absolute;
+  top: 3%;
+  right: 15%;
+  z-index: -1;
+}
+
+
+.signin{
+    width: 20%;
+    height: 36px;
+    font-family: Merriweather;
+    font-size: 28px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    margin-left: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #3f75a1;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.margtp{
+  margin-top: 10%;
+  margin-bottom: 10%;
+
+}
+.main {
+  margin-top: -60px !important;
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 320px){
+  .formdiv {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 80px;
+  padding-top: 20px;
+  background-color: /*rgba (0, 0, 0, 0.5)*/ white;
+  border-radius: 1%;
+  height: auto;
+  margin-bottom: 5%;
+
+}
+
+}
+@media only screen and (min-width: 780px){
+.formdiv {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  width: 80%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 80px;
+  padding-top: 20px;
+  background-color: /*rgba (0, 0, 0, 0.5)*/ white;
+  border-radius: 1%;
+  height: 553px;
+  margin-bottom: 5%;
+
+}
+}
+
+.pricingdiv {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  width: 55%;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-bottom: 80px;
+  padding-top: 20px;
+  background-color: /*rgba (0, 0, 0, 0.5)*/ white;
+  border-radius: 1%;
+
+}
+
+.gif-img {
+  left: 30px !important;
+}
+
+.form-mat {
+  margin-top: 32px !important;
+}
+
+.g-recaptcha {
+  margin-top: 25px;
+}
+
+.signin-btn {
+    margin-left: 30%;
+    margin-top: 30px;
+    width: 40%;
+    height: 51px;
+    border-radius: 4px;
+    background-color: #76b06b;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.13)
+}
+
+.verify-btn {
+    width: 160px;
+    height: 51px;
+    border-radius: 4px;
+    background-color: #76b06b !important;
+    color: #fff;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.13)
+}
+.bcktosgnin{
+    font-size: 16px;
+    margin-top: 25%;
+}
+.verifybtnright{
+  float: right;
+  margin-top: 20%;
+}
+
+
+
+.abt-sen-txt {
+  width:75%;
+  margin:0 auto;
+  text-align: center;
+  color: #3c3c3c;
+  padding-bottom: 5px;
+}
+
+
+.forgot-pass {
+  float: left;
+}
+
+.not-registered {
+  float: right;
+}
+
+.form-links {
+  font-size: 16px;
+  margin-top: 15%;
+}
+
+.form-linkspymnt {
+  font-size: 16px;
+  margin-top: 5%;
+}
+
+.form-links-reg {
+  font-size: 18px;
+  margin-top: 14%;
+  display: block;
+}
+
+.form-links a {
+  color: rgb(46, 89, 132);
+  text-decoration: none;
+}
+
+.form-links a:hover {
+  color: rgb(199, 39, 51);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.abt-img {
+  margin:0 auto;
+  margin-top: 70px;
+}
+
+.abt-img img {
+  border-radius:10px;
+  height:399px;
+  width: 580px;
+  box-shadow: 0px 0px 3px 1px #989696;
+}
+
+.cap-input {
+  width: 50px;
+  text-align: center;
+  height: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.refresh {
+  color: #30679e;
+  cursor: pointer;
+}
+
+.fa-repeat {
+  margin-top: -10px;
+}
+
+.mycaptcha {
+  margin-top: 30px;
+  border: 1px solid;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px 0px #e9e4e4;
+  height: 72px;
+  background-color: #f0f0f0;
+}
+
+.antibot {
+  margin-top: 5%;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+@media only screen and (min-width: 320px){
+  .quote {
+  font-size: 12px;
+
+}
+
+}
+@media only screen and (min-width: 780px){
+  .quote {
+  font-size: 20px;
+  margin-top: 15%;
+
+}
+}
+
+/*===already member?===*/
+
+.form-class-1 {
+  margin-top: -15px !important;
+}
+
+.form-class-2 {
+  margin-top: -3px !important;
+}
+
+.agree {
+  margin-top: 5% !important;
+  display: block !important;
+  text-align: center;
+}
+
+.agree a {
+  color: rgb(46, 89, 132);
+  text-decoration: none;
+}
+
+.agree a:hover {
+  color: rgb(199, 39, 51);
+  text-decoration: none;
+}
+
+.signin-btnReg {
+    margin-top: 10%;
+    float: right;
+    width: 40%;
+    height: 51px;
+    border-radius: 4px;
+    background-color: #76b06b;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.13);
+}
+
+/*======forgotPass======*/
+
+.fpass {
+  font-size: 20px;
+  width: 71%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.alregstd {
+  font-size: 14px;
+  width: 71%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.signin-btnpymt {
+    float: right;
+    height: 51px;
+    border-radius: 4px;
+    background-color: #76b06b;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.13);
+}
+
+.prcdpymntdv{
+  margin: 20% 5%;
+}
+
+
+
+
+
+
+
+
+.Lines {
+  position:  absolute;
+}
+
+.YearlyHLines {
+  border-bottom: 1px solid rgba(46, 89, 132, 0.051);
+  width: 142px;
+  margin-left: -71px;
+}
+
+.YearlyVLines {
+  border-right: 1px solid rgba(46, 89, 132, 0.051);
+  height: 138px;
+  margin-top: -5px;
+}
+
+.CalPins {
+  border-radius: 20px;
+  position: absolute;
+}
+
+.YearlyCalTopPin {
+  background: rgb(79, 83, 87);
+  height: 25px;
+  width: 11px;
+  margin-top: -16px;
+  z-index: 2;
+}
+
+.YearlyCalBottomPin {
+  background: rgb(255, 255, 255);
+  height: 36px;
+  width: 21px;
+  margin-top: -22px;
+  z-index: 1;
+}
+
+.YearlyPlanBG {
+  background: rgb(79, 83, 87);
+  position: absolute;
+  height: 41px;
+  width: 136px;
+  margin-top: -1px;
+  margin-left: -68px;
+}
+
+.YearlyPlanTxt {
+  margin-top: 50px;
+  margin-left: -41px;
+  color: rgb(46, 89, 132);
+  font-size: 17px;
+  position: absolute;
+  transition: 0.16s;
+}
+
+.YearlyPlanCal {
+  margin-top: 45px;
+  border: 5px solid rgb(79, 83, 87);
+  width: 145px;
+  text-align: center;
+  height: 140px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 1px 1px -2px rgba(0,0,0,0.1), 0 1px 6px 0 rgba(0,0,0,0.5);
+  transform: scale(0.9);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.PaymentHeadTxt {
+    margin: 5% 0;
+    font-size: 22px;
+    color: rgb(46, 89, 132);
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+.YearlyPlanBGSep {
+  position: absolute;
+  width: 134px;
+  background: white;
+  height: 3px;
+  margin-left: -67px;
+  margin-top: 29px;
+}
+
+.YearlyRs {
+  position: absolute;
+  margin-top: 79px;
+  color: rgb(46, 89, 132);
+  font-size: 25px;
+  margin-left: -45px;
+  font-weight: bold;
+  transition: 0.16s;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+.MonthlyHLines {
+  border-bottom: 1px solid rgba(46, 89, 132, 0.051);
+  width: 142px;
+  margin-left: -71px;
+}
+
+.MonthlyVLines {
+  border-right: 1px solid rgba(46, 89, 132, 0.051);
+  height: 138px;
+  margin-top: -5px;
+}
+
+.MonthlyCalTopPin {
+  background: rgb(79, 83, 87);
+  height: 25px;
+  width: 11px;
+  margin-top: -16px;
+  z-index: 2;
+}
+
+.MonthlyCalBottomPin {
+  background: rgb(255, 255, 255);
+  height: 36px;
+  width: 21px;
+  margin-top: -22px;
+  z-index: 1;
+}
+
+.MonthlyPlanBG {
+  background: rgb(79, 83, 87);
+  position: absolute;
+  height: 41px;
+  width: 136px;
+  margin-top: -1px;
+  margin-left: -68px;
+}
+
+.MonthlyPlanTxt {
+  margin-top: 50px;
+  margin-left: -49px;
+  color: rgb(46, 89, 132);
+  font-size: 17px;
+  position: absolute;
+  transition: 0.16s;
+}
+
+.MonthlyPlanCal {
+  margin-top: -140px;
+  margin-left: 185px;
+  border: 5px solid rgb(79, 83, 87);
+  width: 145px;
+  text-align: center;
+  height: 140px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5), 0 1px 1px -2px rgba(0,0,0,0.1), 0 1px 6px 0 rgba(0,0,0,0.5);
+  transform: scale(0.9);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.MonthlyPlanBGSep {
+  position: absolute;
+  width: 134px;
+  background: white;
+  height: 3px;
+  margin-left: -67px;
+  margin-top: 29px;
+}
+
+.MonthlyRs {
+  position: absolute;
+  margin-top: 79px;
+  color: rgb(46, 89, 132);
+  font-size: 25px;
+  margin-left: -37px;
+  font-weight: bold;
+  transition: 0.16s;
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+.YearlyPlanCalActive {
+  transform: scale(1.1);
+  border: 5px solid rgb(118, 176, 107);
+}
+
+.YearlyPlanBGActive {
+  background: rgb(118, 176, 107);  
+}
+
+.YearlyCalTopPinActive {
+  background: rgb(118, 176, 107);  
+}
+
+.YearlyPlanTxtActive {
+  margin-top: 43px !important;
+}
+
+.YearlyRsActive {
+  margin-top: 63px !important;
+}
+
+
+.YearlyPlanBGSepActive {
+  background: /*#97c322*/ white;
+}
+
+.YearlyTick {
+  position: absolute;
+  margin-top: 93px;
+  margin-left: -20px;
+  transition: 0.2s;
+}
+
+.YearlyTick img {
+  height: 35px;
+}
+
+.YearlyTickDisp {
+  display: none;
+}
+
+
+
+.MonthlyPlanCalActive {
+  transform: scale(1.1);
+  border: 5px solid rgb(118, 176, 107);
+}
+
+.MonthlyPlanBGActive {
+  background: rgb(118, 176, 107);  
+}
+
+.MonthlyCalTopPinActive {
+  background: rgb(118, 176, 107);  
+}
+
+.MonthlyPlanTxtActive {
+  margin-top: 43px !important;
+}
+
+.MonthlyRsActive {
+  margin-top: 63px !important;
+}
+
+.MonthlyPlanBGSepActive {
+  background: /*#97c322*/ white;
+}
+
+.MonthlyTick {
+  position: absolute;
+  margin-top: 93px;
+  margin-left: -20px;
+  transition: 0.2s;
+}
+
+.MonthlyTick img {
+  height: 35px;
+}
+
+.MonthlyTickDisp {
+  display: none;
+}
+@media only screen and (min-width: 320px){
+  .featrhdng{
+  font-family: Merriweather;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #353a5c;
+    width: 30%;
+    margin: 5% 20%;
+}
+}
+@media only screen and (min-width: 780px){
+  .featrhdng{
+  font-family: Merriweather;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #353a5c;
+    width: 30%;
+    margin: 5% 35%;
+}
+}
+.featureimg{
+    width: 32%;
+    height: auto;
+    object-fit: contain;
+    margin-left: 34%;
+    margin-bottom: 5%;
+}
+.dspblk{
+  display: block !important;
+}
+@media only screen and (min-width: 320px){
+  .featrtxt{
+    margin: 5% 0;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.1px;
+    color: #2c315a;
+}
+}
+@media only screen and (min-width: 780px){
+  .featrtxt{
+    margin: 5% 0;
+    text-align: center;
+    width: 347px;
+    height: 106px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.1px;
+    color: #2c315a;
+}
+}
+
+.featuredivbckclr{
+    background-color: #fcfcfc;
+}
+@media only screen and (min-width: 320px){
+.featurehdrcnt{
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.1px;
+    text-align: center;
+    color: #2c315a;
+}
+}
+@media only screen and (min-width: 780px){
+.featurehdrcnt{
+    display: block;
+    width: 347px;
+    height: 34px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.1px;
+    text-align: center;
+    color: #2c315a;
+}
+}
+@media only screen and (min-width: 320px){
+.featurecnt{
+  width: 100%;
+  height: auto;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #2c315a;
+}
+}
+@media only screen and (min-width: 780px){
+.featurecnt{
+  width: 347px;
+  height: 106px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #2c315a;
+}
+}
+.aboutcnt{
+  width: 100%;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #353a5c;
+  display: block;
+}
+.abouthdng{
+    font-family: Merriweather;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.39;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #353a5c;
+    width: 30%;
+    margin: 3% 35%;
+}
+.bitmap{
+  width: 100%;
+  height: 369px;
+  object-fit: contain;
+}
+
+.prnplebx{
+  width: 530px;
+  height: auto;
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px 2px rgba(209, 210, 216, 0.49);
+  padding: 6%;
+}
+.principlediv{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.prncpledatalist1{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #353a5c;
+}
+
+.prncpledatalist2{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #353a5c;
+}
+
+.prncplehdr{
+  margin-left: 4%;
+  font-family: Merriweather;
+  font-size: 36px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.39;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #353a5c;
+}
+
+.items {
+    max-width:300px;
+    height:250px;
+    background:#ECECEC;
+}
+
+#left, #right { 
+    margin: 5px;
+}
+
+.squarebox{
+  width: 163px;
+  height: 158px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px 2px rgba(209, 210, 216, 0.49); 
+}
+
+.marg13{
+  margin: 16px 10px 18px 9px;
+}
+
+.marg40{
+      margin: 40px 38px 40px 37px;
+}
+
+.dime1 {
+  width: 143px;
+  height: 125px;
+}
+
+.dime2{
+  width: 83px;
+  height: 83px;
+}
+
+.abtdes1{
+  margin: 25px 10px 25px 14px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: justify;
+  color: #353a5c;
+
+}
+
+.abouthdngsub{
+/*justify-content: center;*/
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #353a5c;
+    width: 100%;
+    margin-bottom: 2%;
+
+}
+.abtcnt{
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #353a5c;
+}
+.mrgntpabtcnt{
+  margin-top: 1%;
+}
+
+.Line-3 {
+    height: 3px;
+    border-bottom: solid 3px #76b06b;
+    border-radius: 2px;
+}
+.mrglftprcs{
+  margin-left: 2%;
+}
+.mrgntpprcs{
+  margin-top: 5%;
+}
+.mrgntpprtnr{
+  margin-top: 1%;
+}
+.prcngdv{
+  margin-left: 7%;
+  margin-top: 25%;
+  margin-bottom: 10%
+}
+.abtlinecnt{
+font-family: Lato;
+font-size: 18px;
+font-weight: normal;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+text-align: center;
+color: #353a5c;
+margin: 3% 0;
+}

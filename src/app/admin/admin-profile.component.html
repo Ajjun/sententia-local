@@ -1,0 +1,308 @@
+<div class="container-fluid mrgntp">
+	<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+		<div class="item1 verticalline" fxFlex="20%">
+			<div>
+				<h4 class="fntwght"><i class="fa fa-cogs padlfrt"></i>Admin Settings</h4>
+				<div class="settings_menu">
+					<hr>
+					<i class="fa fa-user-secret padlfrt"></i><a (click)="calladminprofile()"> Admin Profile</a>
+					<hr>
+					<i class="fa fa-key padlfrt"></i><a (click)="callchngpswd()"> Change Password</a>
+					<hr>
+					<i class="fa fa-paper-plane padlfrt"></i><a (click)="callsubscribe()"> Subscription Details</a>
+					<hr>	
+				</div>
+			</div>
+			<div>
+				<h4 class="fntwght"><i class="fa fa-users padlfrt"></i>Users</h4>
+				<div class="settings_menu">
+					<hr>
+					<i class="fa fa-users padlfrt"></i><a (click)="calluserdet()"> Active Users </a>
+					<hr>
+					<i class="fa fa-user-plus padlfrt"></i><a (click)="calladduser()"> Add User</a>
+					<hr>
+					<i class="fa fa-paperclip padlfrt"></i><a (click)="callupload()"> Bulk Upload</a>
+					<hr>
+					<!-- <div >
+						<mat-form-field class="MatForms">
+    						<mat-select [(value)]="user" placeholder={{selectuser}}>
+      							<mat-option *ngFor="let user of selectuserInfo" [value]="user.id" (click)="calluserdet()">{{ user.name }}
+    							</mat-option>
+      						</mat-select>
+						</mat-form-field>
+					</div> -->
+				</div>
+			</div>
+		</div>
+<!--/////////////////////////////////////////////////////////////////////////////////-->
+
+		<div class="item2" fxFlex="80%">
+			<div class="UserSetting" *ngIf = "adminprofile">
+				<div class="profile">{{SettingName}}<hr></div>
+				<div class="editProf" >
+    				<form class="ProfForm">
+						<div class = "pratt"><label class ="space" >Email</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput name="Useremail"[(ngModel)]="Adminemail" disabled>
+						</mat-form-field>
+						</div>
+						<div class = "pratt"><label class ="space" >Name</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput name="Username" [(ngModel)]="Adminname" disabled>
+						</mat-form-field>
+						</div>
+						<div class = "pratt"><label class ="space" >Contact</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput name="Usercontact"[(ngModel)]="Admincontact" disabled>
+						</mat-form-field>
+						</div>
+						<div class = "pratt"><label class ="space" >place</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput name="Userplace"  [(ngModel)]="Adminplace" disabled>
+						</mat-form-field>
+						</div>
+						<div class = "pratt"><label class ="space" >Gender</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput name="Usergender"  [(ngModel)]="Admingender" disabled>
+						</mat-form-field>
+						</div>
+						<!-- <button mat-raised-button color="primary" class="subBtn">Submit</button> -->
+					</form>
+				</div>
+			</div>
+
+<!--///////////////////////////////////////////////////////////////////////////////////-->
+
+			<div class="UserSetting" *ngIf = "adduser">
+				<div class="profile">{{AddName}}<hr></div>
+				<div class="editProf" >
+    				<form class="ProfForm">
+				
+				<div class = "pratt"><label class ="space" >Email</label>
+				<mat-form-field class="example-full-width">
+				<input matInput    required
+				[(ngModel)]="u_email" name="email"
+				pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+				#email="ngModel">
+				</mat-form-field>
+				<div [hidden]="email.valid || email.pristine"
+				class="alert alert-danger">
+				<div [hidden]="!email.hasError('required')">Email is required</div>
+				<div [hidden]="!email.hasError('pattern')">Email format should be 
+				<small><b>joe@abc.com</b></small>
+				</div>
+				</div>
+				</div>	
+
+				<div class = "pratt"><label class ="space" >Name</label>
+				<mat-form-field class="example-full-width">
+				<input matInput   required
+				pattern="[a-zA-Z][a-zA-Z ]+"
+				[(ngModel)]="u_name" name="name"
+				#name="ngModel">
+				</mat-form-field>
+				<div [hidden]="name.valid || name.pristine"
+				class="alert alert-danger">
+				<div [hidden]="!name.hasError('required')">Name is required</div>
+				<div [hidden]="!name.hasError('pattern')">Only alphabetsallowed</div>
+				</div>
+				</div>
+
+    			<button mat-raised-button color="primary" (click)="addnewUser()" class="subBtn">Submit</button>
+					</form>
+				</div>
+			</div>
+
+<!--//////////////////////////////////////////////////////////////////////////////////-->
+
+			<div class="UserSetting1"   *ngIf = "subscribe">
+				<div class="subscribeInps">
+					<div class="profile">Subscription Details<hr></div>
+					<div class="ACENTER"><img src="/assets/subscribtion.png" width="100" /></div>
+					<div  class="subscdetls">
+						<div class="substype">
+							<span>Total Number of Licence: </span><span>{{total_lic}}</span>
+						</div>
+						<div class="substype">
+							<span>Number of Licence in use: </span><span>{{used_lic}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<!--//////////////////////////////////////////////////////////////////////////////////-->
+
+
+
+
+			<div class="UserSetting" *ngIf = "chngpswd">
+				<div class="profile">{{PswdName}}<hr></div>
+				<div class="editProf" >
+    				<form class="ProfForm">
+						<div class = "pratt">
+							<mat-form-field class="example-full-width">
+								<input  matInput placeholder="Current password" name="Useremail" [(ngModel)]="current_pwd" type="password"  required>
+								</mat-form-field>
+								</div>
+
+								<div class = "pratt">
+								<mat-form-field class="example-full-width">
+								<input  matInput placeholder="New password" name="new password" [(ngModel)]="new_pswd" type="password" required>
+								</mat-form-field>
+								</div>
+
+								<div class = "pratt">
+								<mat-form-field class="example-full-width">
+								<input  matInput placeholder="Confirm password" name="confirm password" [(ngModel)]="cnfrm_pswd" type="password" required>
+							</mat-form-field>
+						</div>
+
+						<p *ngIf="pwdSuccess" class="green"> Your Password has been changed.</p>
+
+    			<button mat-raised-button color="primary" [disabled]="new_pswd!=cnfrm_pswd" (click)="changePassword()" class="subBtn">Change Password</button>
+					</form>
+				</div>
+			</div>
+
+
+
+
+
+		<div class="main ACENTER" *ngIf="bulk">
+			<form class=""   enctype="multipart/form-data"  id="form_id" accept-charset="utf-8">
+				<div class="form-all">
+					<ul class="form-section page-section ulpadng">
+						<li class="form-line" data-type="control_image" id="id_11">
+
+							<div>
+								 
+								<a href="/api/static/sampletemplate.csv"  class="button submit_button" role="button">Download Template</a>     
+							</div>
+							
+						</li>
+			       		<li class="dwnloadtmplate">
+				    		<p align="center" class="li_p">Please download the template,and upload in same format. </p>
+				    		
+				    		<input type="text" class="form-textbox" onKeyDown="return false;" name="file_name" id="file_name"
+				    		 autocomplete="off"/>
+
+
+				    		 <input id="f" class="form-browse" style="display: none;" type="file" name="q8_input" (change)="handleFileInput($event.target.files);" onchange="setName(this)" file-limit="1" #fileInp />
+
+
+				    		 <input mat-raised-button color="primary" type="button" value="Browse..." id="fakeBrowse" (click)="HandleBrowseClick()" />
+
+				    		
+				    		
+				    	</li>
+			       
+						<li class="li2">
+							<label class="note form-sub-label" for="input_15"> ( Note: Only csv files can be uploaded ) </label>
+						</li>
+						<div id="cid" class="form-input105">
+							<div style="text-align:center; margin-top: 0px; height: 25px;" class="form-buttons-wrapper">
+								<button mat-raised-button color="primary" id="input_" type="button" class="submit_button" (click)="uploadFileToActivity()">Upload</button>
+							</div>
+							<div style="text-align:center; margin-top: 0px; height: 25px;" class="form-buttons-wrapper">
+							
+								<a href="{{urldata}}" *ngIf="csvurl" class="button submit_button" role="button">Download report</a>
+							</div>
+								
+						</div>
+					</ul>
+				</div>
+			</form>
+			  <span class="uploadLoading" [ngClass]="{'uploadLoadingDisplay': uploadLoadingDisplayValue}">
+			  <img src="../assets/sengif2.svg" />
+			</span>
+		</div>
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////-->
+		<div  *ngIf = "userdetails">
+ 			<div class="example-container mat-elevation-z8">
+  				<div class="example-header">
+    				<span class="tablehead">User Details<hr></span>
+  				</div>
+  				<mat-table class="docname-table" #table [dataSource]="auserSource" matSort>{{selectuserinfoData}}
+    			<!-- Weight Column -->
+    				<ng-container matColumnDef="Username">
+      					<mat-header-cell *matHeaderCellDef mat-sort-header> User ID </mat-header-cell>
+      					<mat-cell *matCellDef="let selectuserinfoData" class="rowcursor"> {{selectuserinfoData.userid}} </mat-cell>
+    				</ng-container>
+
+    				<ng-container matColumnDef="Userid">
+      					<mat-header-cell *matHeaderCellDef mat-sort-header> User Name</mat-header-cell>
+      					<mat-cell *matCellDef="let selectuserinfoData" class="rowcursor"> {{selectuserinfoData.name}} </mat-cell>
+    				</ng-container>
+
+    				<ng-container matColumnDef="Edit">
+      					<mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+     					<mat-cell  *matCellDef="let selectuserinfoData" class="rowcursor"><mat-icon matSuffix class="edit-icon" (click)="calledituser(selectuserinfoData)">mode_edit</mat-icon></mat-cell>
+    				</ng-container>
+
+    				<ng-container matColumnDef="Delete">
+      					<mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+     					<mat-cell  *matCellDef="let selectuserinfoData" class="rowcursor"><mat-icon matSuffix class="edit-icon"(click)="openDialog(selectuserinfoData)">delete</mat-icon></mat-cell>
+    				</ng-container>
+
+    				<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    				<mat-row *matRowDef="let row; columns: displayedColumns;" class="rowbg" >
+    				</mat-row>
+  				</mat-table>
+			</div>
+		</div>
+
+
+
+
+
+ 
+
+<!--////////////////////////////////////////////////////////////////////////////////////-->
+	
+<div class="UserSetting" *ngIf = "editdetails">
+				<div class="profile">Modify User Details<hr></div>
+				<div class="editProf" >
+    				<form class="ProfForm">
+						<div class = "pratt"><label class ="space" >Email</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput [(ngModel)]= "editusrEmail" name="Useremail" disabled>
+						</mat-form-field>
+						</div>
+						<div class = "pratt"><label class ="space" >Name</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput  name="Username" [(ngModel)]= "editusrName"> 
+						<mat-icon matSuffix class="edit-icon">mode_edit</mat-icon>
+						</mat-form-field>
+						</div>
+						<div class = "pratt"><label class ="space" >Contact</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput name="Usercontact" disabled>
+						</mat-form-field>
+						</div>
+						<div class = "pratt"><label class ="space" >place</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput name="Userlocation" disabled>
+						</mat-form-field>
+						</div>
+						<div class = "pratt"><label class ="space" >Contact</label>	
+						<mat-form-field class="example-full-width">					
+						<input matInput name="Userlocation" disabled>
+						</mat-form-field>
+						</div>
+						<div>
+						<button mat-raised-button color="primary" class="subBtn1" (click)= "editData()">Submit</button>
+						<button mat-raised-button color="primary" class="subBtn1" (click)="calluserdet()">Back</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+<!--////////////////////////////////////////////////////////////////////////////////////-->
+		
+<!--////////////////////////////////////////////////////////////////////////////////////-->		
+	</div>
+
+
+</div>

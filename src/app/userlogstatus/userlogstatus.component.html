@@ -1,0 +1,45 @@
+ <div class="container minHeight" style="margin-top: 5%;">
+ 	
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+	<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <span class="tablehead">User Log Status</span>
+  </div>
+  <mat-table class="docname-table" #table [dataSource]="statusSource" matSort>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Username">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> User Name </mat-header-cell>
+      <mat-cell *matCellDef="let statusData" class="rowcursor"> {{statusData.userid}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Userid">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> User ID </mat-header-cell>
+      <mat-cell *matCellDef="let statusData" class="rowcursor"> {{statusData.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="LastLoginDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Last Login Date </mat-header-cell>
+      <mat-cell *matCellDef="let statusData" class="rowcursor"> {{statusData.log_date}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="LastLoginTime">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Last Login Time </mat-header-cell>
+      <mat-cell *matCellDef="let statusData" class="rowcursor"> {{statusData.log_time}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Access">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Accessed </mat-header-cell>
+      <mat-cell *matCellDef="let statusData"  class="rowcursor"> {{statusData.access}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="rowbg"
+      [ngClass]="{'highlight': selectedRowIndex == row.id}"
+             (click)="highlight(row)" title="Click to see analysed result">
+    </mat-row>
+  </mat-table>
+</div>
+</div>
+</div>

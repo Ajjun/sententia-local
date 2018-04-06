@@ -1,0 +1,350 @@
+/* Structure */
+@media only screen and (min-width: 320px){
+.margTOP {
+  margin-top: 20%;
+}
+}
+@media only screen and (min-width: 780px){
+.margTOP {
+  margin-top: 5%;
+}
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 60vh;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+  text-align: center;
+}
+
+.mat-header-row {
+    position: sticky !important;
+    top: 0 !important;
+    background: inherit !important;
+}
+
+.Sugheader {
+  min-height: 45px;
+  padding: 8px 35px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  text-align: center;
+}
+
+@media only screen and (min-width: 320px){
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+}
+@media only screen and (min-width: 870px){
+.mat-form-field {
+  font-size: 14px;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: auto;
+}
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.docname-table mat-header-cell {
+  font-size: 15px !important;
+  color: #406d9b !important;
+}
+
+.tablehead {
+  display: block;
+  color: #406d9b;
+  margin-top: 5px;
+}
+
+.rowbg {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.rowbg:hover {
+  background-color: rgba(147, 142, 142, 0.1);
+}
+
+.highlight{
+  background-color:#406d9b;/* rgba(147, 142, 142, 0.2); #626365*/
+}
+
+.highlight:hover{
+  background-color:#406d9b;/* rgba(147, 142, 142, 0.2); #626365*/
+}
+
+.highlight mat-cell {
+  color:white;
+}
+.searchInp {
+  margin-top: -10px;
+}
+
+.rowbg:hover {
+   .tooltiptext {
+    visibility: hidden;
+}
+}
+@media only screen and (min-width: 320px){
+.gauge {
+  visibility: visible;
+  display: block;
+  margin-left: 25%;
+}
+}
+@media only screen and (min-width: 870px){
+.gauge {
+  visibility: visible;
+  display: block;
+  margin-left: 15%;
+  margin-top: 20%;
+}
+}
+
+.linegraph {
+  visibility: visible;
+  display: block;
+}
+
+.piegraph {
+  visibility: visible;
+  display: block;
+}
+
+
+.lineGraphDisplayNone {
+  display: none !important;
+}
+
+.pieGaugeDisplayNone {
+  display: none !important;
+}
+
+.GaugeDisplayNone {
+  display: none !important;
+}
+
+.alert {
+  width: auto;
+  z-index: -10;
+  position: fixed;
+  margin-left: 75%;
+  margin-top: -20%;
+  background-color: white;
+  padding: 40px;
+  padding-right: 75px;
+  padding-left: 75px;
+  border: 1px dotted red;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  text-align: center;
+  opacity: 0;
+  color:#ce3614;
+  transition: 0.5s;
+  transform: scale(0);
+}
+
+.alertOnly {
+  opacity: 1;
+  z-index: 9999 !important;
+  transform: scale(1);
+  margin-left: 75%;
+  margin-top: -10%;
+}
+
+.alertText {
+  display: block;
+  margin-top: 5px;
+}
+
+.alertBtn {
+  margin-top: 25px;
+}
+
+.demo-chart {
+  height: 400px;
+}
+
+.errsen {
+  color: #ef4f04;
+  display:block;
+  padding: 10px;
+}
+
+.sugsen {
+  color: #048def;
+  display:block;
+  padding:11px;
+  margin-top: -18px;
+  margin-bottom: 10px;
+}
+
+.Sugrow .mat-row {
+  padding: 0, 8px;
+}
+
+.SugTable {
+  height: 300px;
+}
+
+.SugTable .mat-table{
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.SugTableDisplayNone {
+  display: none;
+}
+
+.SugBoxDisplayNone {
+  display: none;
+}
+
+.SugBox {
+  overflow:hidden;
+  height:300px;
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+
+.SugBoxBody {
+  overflow-x:hidden;
+  height:250px;
+}
+
+.SugBoxBtn {
+  margin-top: 10px;
+  margin-left: 40%;
+  margin-bottom: 10px;
+}
+
+.SugBoxSpan {
+    height: 44px;
+    overflow-x: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    width: 90%;
+    margin: 0 auto;
+    font-size: 13px;
+}
+
+.MainHead {
+  width: 90%;
+  margin:0 auto;
+  display: block;
+  padding: 5px;
+}
+
+.SugBoxHead {
+  text-align:center;
+  display: block;
+  padding-bottom: 12px;
+  padding-top: 13px;
+  color:#406d9b;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.DocErrHead {
+  color: #555352;
+}
+
+#DocError {
+  color: #ef4f04;
+}
+
+.DocSugHead {
+  color: #555352;
+}
+
+#DocSug {
+  color: #048def;
+}
+
+.DocExampleHead {
+  color: #555352;
+}
+
+#DocExample {
+  color: green;
+}
+
+.FeedbackHead {
+  color:#406d9b;
+}
+
+.Sugboxmain4 textarea {
+  resize:none;
+  width:90%;
+  margin:0 auto;
+  display: block;
+  height:50px;
+  margin-top:8px;
+}
+
+.SugBoxCls {
+  position: absolute;
+  margin-top: -31px;
+  margin-left: 484px;
+  color: #406d9b;
+  cursor:pointer;
+}
+
+.SugTabCls {
+  position:absolute;
+  margin-left: 228px;
+  margin-top:-17px;
+  color:#406d9b;
+  cursor:pointer;
+}
+
+/*.TotSenErr {
+  position:absolute;
+  margin-left:548px;
+  margin-top: -35px;
+}*/
+
+.TotErr {
+  margin-top: 5px;
+}
+
+.TotSenErrDisplayNone {
+  display:none;
+}
+
+
+.uploadLoading {
+  position: absolute;
+  margin-left: 629px;
+  margin-top: 70px;
+}
+
+.uploadLoading img {
+  height:50px;
+}
+
+.uploadLoadingDisplay {
+  display: none;
+}
+
+@media only screen and (min-width: 320px){
+.linegrp{
+  margin-top: 2%;
+}
+}
+@media only screen and (min-width: 870px){
+.linegrp{
+  margin-top: 5%;
+}
+}
+
+
+.mrgtpbtm{
+  margin: 5% 0;
+}

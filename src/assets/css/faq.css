@@ -1,0 +1,200 @@
+/******************************************************css fo faq starts*********************************************************************/
+@media only screen and (min-width: 320px){
+.menu-faqs {
+	width:100%;
+	margin:0 auto;
+	background-color: rgba(255, 0, 0, 0);
+	min-height: 481px;
+	margin-bottom: 50%;
+}
+}
+@media only screen and (min-width: 870px){
+.menu-faqs {
+	width:100%;
+	margin:0 auto;
+	background-color: rgba(255, 0, 0, 0);
+	min-height: 481px;
+	margin-bottom: 3%;
+}
+}
+
+.a-text {
+	font-size: 15px;
+	color:#666;
+}
+
+.divide {
+	display:block;
+	border-bottom:2px dotted #fcfcfc;
+}
+
+.ref-books {
+	cursor:pointer;
+	display:block;
+	font-size: 14px;
+	color:#e84d14;
+}
+
+.ref-webs {
+	cursor:pointer;
+	display:block;
+	font-size: 14px;
+	color:#e84d14;
+}
+
+#refwebsspan a:hover{
+	color:#e84d14;
+	text-decoration:none;
+}
+
+@media only screen and (min-width: 320px){
+#refbooksspan {
+	display:none;
+	-webkit-column-gap: 185px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 185px; /* Firefox */
+    column-gap: 185px;
+	column-rule: 2px dotted #fcfcfc;
+	border-top:2px dotted #fcfcfc;
+	padding-top:8px;
+}
+}
+@media only screen and (min-width: 870px){
+#refbooksspan {
+	display:none;
+	column-count:2;
+	-webkit-column-gap: 185px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 185px; /* Firefox */
+    column-gap: 185px;
+	column-rule: 2px dotted #fcfcfc;
+	border-top:2px dotted #fcfcfc;
+	padding-top:8px;
+}
+}
+
+#refwebsspan {
+	display:none;
+	border-top:2px dotted #fcfcfc;
+	border-bottom:2px dotted #fcfcfc;
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+.q-text {
+	cursor:pointer;
+	position: absolute;
+	margin-top: 5px;
+	margin-left:15px;
+	font-size:16px;
+	color:#666;
+}
+
+.answer {
+	display:none;
+	border-bottom:2px solid #ffffff;
+	margin-top: 2px;
+}
+@media only screen and (min-width: 320px){
+.answer span {
+	display: inline-block;
+	width: 90%;
+	margin: 0 auto;
+	text-align: justify;
+	margin-left:36px;
+	margin-top:8px;
+}
+}
+
+@media only screen and (min-width: 870px){
+.answer span {
+	display: inline-block;
+	width: 90%;
+	margin: 0 auto;
+	text-align: justify;
+	margin-left:36px;
+	margin-top:8px;
+}
+}
+
+.questions {
+	cursor:pointer;
+	/*border-bottom:1px dashed red;*/
+	height: 31px;
+}
+
+.q {
+	margin-top: 5px !important;
+	font-size: 16px;
+	color:grey;
+	position: absolute;
+}
+
+.drop_plus {
+	float:right;
+	margin-right: 1%;
+	margin-top:9px;
+	cursor:pointer;
+	color: #f24d0b;
+}
+
+.drop_plus_sub {
+	margin-left:15px;
+	margin-top:9px;
+	cursor:pointer;
+	color: #f24d0b;
+}
+
+.menu-faqs {
+	border:1px dotted #f1f1f1;
+}
+
+.menu-faqs > div:nth-of-type(4n+1) {background: #efeded; color:#2b2a2a;}/*#f7f4f4; #e8e5e5;*/
+.menu-faqs > div:nth-of-type(4n+3) {background: #fcfcfc; color:#2b2a2a;}
+.menu-faqs > div:nth-of-type(4n+2) {background: #edf4f8;}
+.menu-faqs > div:nth-of-type(4n+4) {background: #edf4f8;}
+
+.show {
+	display:block;
+}
+
+.hide {
+	display:none;
+}
+
+.qbold {
+	font-weight: bold;
+
+}
+/*******************************************************************************************************************************************/
+
+@media only screen and (max-width: 500px) and (min-width: 279px) {
+
+.questions {
+	height:44px;
+}
+
+.drop_plus {
+	margin-top: 15px;
+	margin-right:2.5%;
+}
+
+.q-text {
+	width:58%;
+	font-size:13px;
+	margin-top:3px;
+}
+
+.q {
+	margin-top: 10px !important;
+	font-size:15px;
+}
+
+.q-text-sm {
+	margin-top: 13px;
+}
+
+.answer span {
+    margin-left: 14px;
+}
+
+}
+/******************************************************css fo faq ends*********************************************************************/

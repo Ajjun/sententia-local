@@ -1,0 +1,113 @@
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-button {
+  color: rgba(46, 89, 132, 0.72) !important;
+}
+
+.senlogo {
+  margin-top:8px;
+  width: 212px;
+  height: 40px;
+  object-fit: contain;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.senlogo:hover {
+transform: scale(1.05);
+opacity: 0.9;
+}
+
+.mat-primary {
+    background: #f4f5f8 !important;
+}
+
+.mat-drawer-container {
+    background-color: rgba(0,0,0,0);
+}
+
+.mat-sidenav {
+    width: 200px;
+}
+
+.mat-button {
+    font-weight: 700 !important;
+}
+
+.sideheight {
+  height: 100vh;
+}
+
+.MenuDisplayNone {
+  display:none;
+}
+
+.VYMape {
+  bottom: 0;
+  direction: ltr;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -5;
+}
+
+.Webhead {
+  background: #fff !important; /*d8d8d8*/
+  position: fixed;
+  z-index: 2;
+}
+
+/*a:hover{
+  text-decoration: none !important;
+}*/
+.mat-toolbar-single-row {
+    height: 84px !important;
+}
+
+a.mat-button {
+  cursor: pointer;
+  font-family: "Lato";
+  font-size: 15px;
+  color: rgba(46, 89, 132, 0.72) !important;
+  text-decoration: none;
+  background-color: transparent;
+  font-weight: 500 !important;
+}
+
+a.mat-button:hover {
+  text-decoration: none !important;
+}
+
+.hoverBorder {
+  top: 0;
+  left: 23%;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 55%;
+}
+
+a.mat-button:hover .hoverBorder {
+  border-bottom: 2px solid rgba(46, 89, 132, 0.72) !important;
+}
+
+a.mat-button /deep/.mat-button-focus-overlay {
+    background-color: transparent;
+}
+
+a.mat-button:focus {
+  outline: 0;
+}
+
+.mat-sidenav-content {
+  min-height: 93vh !important;
+}

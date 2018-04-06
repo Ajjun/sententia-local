@@ -1,0 +1,39 @@
+@media only screen and (min-width: 320px){
+  .faq_style{
+	text-align: center;
+	font-size: 30px;
+	font-weight: 600;
+	margin-bottom: 3%;
+	color: #3366ff;
+}
+
+}
+@media only screen and (min-width: 780px){
+.faq_style{
+	text-align: center;
+	font-size: 30px;
+	font-weight: 600;
+	margin-bottom: 3%;
+	color: #3f75a1;
+}
+}
+
+/*@media only screen and (min-width: 870px) and (min-height: 768px){
+.container{
+	height: 95vh !important;
+}
+}*/
+
+@media only screen and (min-width: 320px){
+  .margtp{
+	margin-top: 16%;
+	margin-bottom: 50%;
+}
+
+}
+@media only screen and (min-width: 780px){
+.margtp{
+	margin-top: 7%;
+	margin-bottom: 0%;
+}
+}

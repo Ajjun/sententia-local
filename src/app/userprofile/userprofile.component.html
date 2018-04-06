@@ -1,0 +1,112 @@
+<div class="container mrgntp minHeight">
+  <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+    <div class="item1 verticalline" fxFlex="20%">
+        <h4 class="AccountSettings">Account Settings</h4>
+        <div _ngcontent-c6="" class="SettingMenu">
+            <div class="">
+              <hr>
+              <div class="menu-ul">
+                  <div class="menuMain">General</div>
+                  <div class="menuSub" (click)="profileClick()">Profile</div>
+              </div>
+            </div>
+            <div class="">
+              <hr>
+              <div class="menu-ul">
+                  <div class="menuMain">Security</div>
+                  <div class="menuSub" (click)="passwordClick()">Change password</div>
+              </div>
+            </div>
+            <div class="">
+              <hr>
+              <div class="menu-ul">
+                  <div class="menuMain">Subscription</div>
+                  <div class="menuSub" (click)="userSubscription()">Subscription details</div>
+              </div>
+            </div>  
+        </div>
+      </div>
+
+      <div class="item1 verticalline" fxFlex>
+          <div class="UserSetting">
+            <span class="profile">{{SettingName}} <hr></span>
+           
+            <div class="editProf" [ngClass]="{'profileForm': profileFormVal}">
+                <form class="ProfForm">
+  <div class= "email">
+    <label>Email</label>
+    <mat-form-field class="MatForms"><input matInput name="Useremail" value={{userStatus}} disabled>
+    </mat-form-field>
+  </div>
+    <div class= "name inps">
+    <label>Name</label>
+    <mat-form-field class="MatForms"><input #nameInp matInput name="Username" [(ngModel)]="name">
+    <mat-icon matSuffix class="edit-icon">mode_edit</mat-icon>
+    </mat-form-field>
+  </div>
+    <div class= "contact inps">
+    <label>Contact</label>
+    <mat-form-field class="MatForms contactInp"><input matInput name="Usercontact" [(ngModel)]="contact">
+    <mat-icon matSuffix class="edit-icon">mode_edit</mat-icon>
+    </mat-form-field>
+  </div>
+      <div class= "place inps">
+    <label>Place</label>
+    <mat-form-field class="MatForms"><input matInput name="Userlocation" disabled>
+      </mat-form-field>
+    </div>
+      <div class= "gender inps">
+    <label>Gender</label>
+    <mat-form-field class="MatForms genderInp">
+    <mat-select [(value)]="gender" disabled>
+      <mat-option value="select">--Select--</mat-option>
+      <mat-option value="Male">Male</mat-option>
+      <mat-option value="Female">Female</mat-option>
+    </mat-select>
+      </mat-form-field>
+    </div>
+      <button mat-raised-button color="primary" class="ProfBtn">Update</button>
+</form>
+            </div>
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+              <div class="editPass" [ngClass]="{'passwordForm': passwordFormVal}">
+                  <form class="PassForm">
+                    <div class= "passInps">
+                     <mat-form-field class="PassForm">
+        <input matInput placeholder="Old Password*" name="oldpass" type="password" [(ngModel)]="oldPass">
+      </mat-form-field>
+                    </div>
+
+                    <div class= "passInps">
+                      <mat-form-field class="PassForm">
+        <input name="newpass" matInput placeholder="New Passwor*" [type]="hide ? 'password' : 'text'" [(ngModel)]="newPass">
+        <mat-icon matSuffix class="edit-icon" (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </mat-form-field>
+                    </div>
+
+                    <div class= "passInps">
+                      <mat-form-field class="PassForm">
+        <input name="confirmpass" matInput placeholder="Confirm Password*" type="password" (keyup)="CkeckPass()" [(ngModel)]="confirmPass">
+      </mat-form-field>
+                    </div>
+                    <span *ngIf="notsame" class="Textcenter" [ngStyle]="{'color': PassColor}">{{passworderr}}</span>
+                      <button mat-raised-button color="primary" type="submit" class="PassBtn" (click)="ChangePass()" [disabled]="userpasschange">Change password</button>
+                  </form>
+              </div>
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+              <div class="subscribeInps"  [ngClass]="{'suscribeForm': suscribeFormVal}">
+                <span><img src="/assets/subscribtion.png" /></span>
+                <span class="plan">You have subscribed for <span class="activePlan">{{ plan }} Plan.</span></span>
+                <span class="dates">Plan started on <span class="activePlan">{{ startDate }}</span> and ends on <span class="activePlan">{{ endDate }}.</span></span>
+              </div>
+          </div>
+      </div>
+
+
+  </div>
+</div>
+

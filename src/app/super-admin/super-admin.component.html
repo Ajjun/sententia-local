@@ -1,0 +1,195 @@
+      <mat-progress-bar *ngIf="progressbar"
+          class="progressBar"
+          color="primary"
+          mode="indeterminate">
+      </mat-progress-bar>
+<div class="container-fluid mrgntp">
+	<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutAlign.xs="center" fxLayoutGap="10px" fxLayoutGap.xs="0px">
+		<div class="item1 verticalline" fxFlex="20%">
+			<div>
+				<h4 class="fntwght"><i class="fa fa-cogs padlfrt"></i>Super-admin Settings</h4>
+				<div class="settings_menu">
+					<hr>
+					<i class="fa fa-user-secret padlfrt"></i><a (click)="calladminprofile()"> Super-admin Profile</a>
+					<hr>
+					<i class="fa fa-key padlfrt"></i><a (click)="callchngpswd()"> Change Password</a>
+					<hr>
+					<i class="fa fa-paper-plane padlfrt"></i><a (click)="callsubscribe()"> Subscription Details</a>
+					<hr>	
+				</div>
+			</div>
+			<div>
+				<h4 class="fntwght"><i class="fa fa-user padlfrt"></i>Admin Settings</h4>
+				<div class="settings_menu">
+					<hr>
+					<i class="fa fa-users padlfrt"></i><a (click)="callAdminDetails()"> Active Admin</a>
+					<hr>
+					<i class="fa fa-user-plus padlfrt"></i><a (click)="calladdAdmin()"> Add Admin</a>
+					<hr>
+				</div>
+			</div>
+		</div>
+<!--/////////////////////////////////////////////////////////////////////////////////-->
+
+		<div class="item2" fxFlex="80%">
+			<div class="UserSetting" *ngIf = "Sadminprofile">
+				<div class="profile">{{SettingName}}<hr></div>
+				<div class="editProf" >
+    				<form class="ProfForm">
+						<label class ="space" >Email</label>	
+						<mat-form-field class="example-full-width">
+						<input matInput name="Useremail"[(ngModel)]="SuperAdminemail" disabled>
+						</mat-form-field>
+						<label class ="space" >Name</label>	
+						<mat-form-field class="example-full-width">
+						<input matInput name="Username" [(ngModel)]="SuperAdminname">
+						</mat-form-field>
+						<label class ="space" >Contact</label>	
+						<mat-form-field class="example-full-width">
+						<input matInput name="Usercontact"[(ngModel)]="SuperAdmincontact">
+						</mat-form-field>
+						<label class ="space" >License left</label>	
+						<mat-form-field class="example-full-width">
+						<input matInput  name="adminLic" [(ngModel)]= "LeftLic" type="number" min="0" disabled>
+						</mat-form-field>
+						<label class ="space" >place</label>	
+						<mat-form-field class="example-full-width">
+						<input matInput name="Userplace"  [(ngModel)]="SuperAdminplace" disabled>
+						</mat-form-field>
+						<label class ="space" >Gender</label>	
+						<mat-form-field class="example-full-width">
+						<input matInput name="Usergender"  [(ngModel)]="SuperAdmingender" disabled>
+						</mat-form-field>
+						<!-- <button mat-raised-button color="primary" class="subBtn">Submit</button> -->
+					</form>
+				</div>
+			</div>
+
+<!--///////////////////////////////////////////////////////////////////////////////////-->
+
+			<div class="UserSetting" *ngIf = "addAdmin">
+				<div class="profile">{{AddName}}<hr></div>
+				<div class="editProf" >
+    				<form>
+		<div>    					
+		<label>Email</label>
+		<mat-form-field><input matInput name="Useremail" [(ngModel)]="NewAdminEmail">
+		<mat-icon matSuffix class="edit-icon">mode_edit</mat-icon>
+		</mat-form-field></div>
+		<div>
+		<label>Name</label>
+		<mat-form-field><input #nameInp matInput name="Username" [(ngModel)]="NewAdminName">
+		<mat-icon matSuffix class="edit-icon">mode_edit</mat-icon>
+		</mat-form-field></div>
+		<div>
+		<label>Number of License</label>	
+		<mat-form-field><input matInput  name="adminLic" type="number" min="0" [max]="LeftLic" [(ngModel)]= "NewAdminLic">
+		<mat-hint>License left &nbsp;:- &nbsp; {{LeftLic}}</mat-hint>
+		</mat-form-field></div>
+      <div *ngIf="AddAdminMsg" class="Textcenter" [ngStyle]="{'color': AddAdminMsgColor}">{{AddAdminMsgText}}</div>
+    	<button mat-raised-button color="primary" class="ProfBtn" (click)="SubmitNewAdmin( NewAdminEmail, NewAdminName, NewAdminLic)">Update</button>
+</form>
+				</div>
+			</div>
+
+<!--//////////////////////////////////////////////////////////////////////////////////-->
+
+<!--//////////////////////////////////////////////////////////////////////////////////-->
+
+			<div class="UserSetting1"   *ngIf = "subscribe">
+				<div class="subscribeInps">
+					<div class="profile">Subscription Details<hr></div>
+					<div class="ACENTER"><img src="/assets/subscribtion.png" width="100" /></div>
+					<div  class="subscdetls">
+						<div class="substype">
+							<span>Total Number of Licence: </span><span>{{total_lic}}</span>
+						</div>
+						<div class="substype">
+							<span>Number of Licence in use: </span><span>{{used_lic}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<!--//////////////////////////////////////////////////////////////////////////////////-->
+
+			<div class="UserSetting1" *ngIf = "chngpswd">
+				<div class="profile">{{PswdName}}<hr></div>
+    				<div class="editProf">
+    <form class="PassForm">
+		<span class= "passInps">
+    	<mat-form-field class="PassForm">
+        <input matInput placeholder="Old Password*" name="oldpass" type="password" [(ngModel)]="oldPass">
+      </mat-form-field></span>
+
+      	<span class= "passInps">
+		<mat-form-field class="PassForm">
+        <input name="newpass" matInput placeholder="New Passwor*" [type]="hide ? 'password' : 'text'" [(ngModel)]="newPass">
+        <mat-icon matSuffix class="edit-icon" (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </mat-form-field></span>
+
+      <span class= "passInps">
+      <mat-form-field class="PassForm">
+        <input name="confirmpass" matInput placeholder="Confirm Password*" type="password" (keyup)="CkeckPass()" [(ngModel)]="confirmPass">
+      </mat-form-field></span>
+      <span *ngIf="notsame" class="Textcenter" [ngStyle]="{'color': PassColor}">{{passworderr}}</span>
+    	<button mat-raised-button color="primary" type="submit" class="PassBtn" (click)="ChangePass()" [disabled]="userpasschange">Change password</button>
+</form>
+			</div>
+			</div>
+
+<!--/////////////////////////////////////////////////////////////////////////////////-->
+		<div  *ngIf = "AdminDetails" class="Admintabs">
+			<div class="tabs tab1" [ngClass]="{'adminActiveTab': adminActiveTab, 'adminInactiveTab': adminInactiveTab}" (click)="adminTab()">Admin details</div>
+			<div class="tabs tab2"[ngClass]="{'userActiveTab': userActiveTab, 'userInactiveTab': userInactiveTab}" (click)="userTab()" *ngIf="userTabActive">User details<i class="fa fa-times userdetCls" (click)="userTabCls()"></i></div>
+			<div class="tabs tab2"[ngClass]="{'analysisActiveTab': analysisActiveTab, 'analysisInactiveTab': analysisInactiveTab}" (click)="analysisTab()" *ngIf="AnalysisTabActive">User Analysis<i class="fa fa-times userdetCls" (click)="analysisTabCls()"></i></div>
+
+			<!--******************************************************************************************-->
+			<div *ngIf="adminDetailsTab">
+  			<mat-table class="docname-table AdminTable1 tables" #table [dataSource]="AdminTabSource" matSort>
+    				<ng-container matColumnDef="Adminname">
+      					<mat-header-cell *matHeaderCellDef mat-sort-header> Admin Email </mat-header-cell>
+      					<mat-cell *matCellDef="let selectuserinfoData" class="rowcursor"> {{selectuserinfoData.userid}} </mat-cell>
+    				</ng-container>
+
+    				<ng-container matColumnDef="Adminid">
+      					<mat-header-cell *matHeaderCellDef mat-sort-header> Admin Name</mat-header-cell>
+      					<mat-cell *matCellDef="let selectuserinfoData" class="rowcursor"> {{selectuserinfoData.name}} </mat-cell>
+    				</ng-container>
+
+    				<mat-header-row *matHeaderRowDef="displayedAdminColumns"></mat-header-row>
+    				<mat-row *matRowDef="let row; columns: displayedAdminColumns;" class="rowbg" 
+    					[ngClass]="{'highlight': selectedRowIndex == row.id}"
+             			(click)="highlight(row)" title="Click to see users under this admin.">
+    				</mat-row>
+  				</mat-table>
+  			</div>
+  			<!--******************************************************************************************-->
+  			<div *ngIf="userDetailsTab">
+  			<mat-table class="docname-table AdminTable1 tables" #table [dataSource]="UserTabSource" matSort>
+    				<ng-container matColumnDef="Username">
+      					<mat-header-cell *matHeaderCellDef mat-sort-header> User Email </mat-header-cell>
+      					<mat-cell *matCellDef="let i" class="rowcursor"> {{i.userid}} </mat-cell>
+    				</ng-container>
+
+    				<ng-container matColumnDef="Userid">
+      					<mat-header-cell *matHeaderCellDef mat-sort-header> User Name</mat-header-cell>
+      					<mat-cell *matCellDef="let i" class="rowcursor"> {{i.name}} </mat-cell>
+    				</ng-container>
+
+    				<mat-header-row *matHeaderRowDef="displayedUserColumns"></mat-header-row>
+    				<mat-row *matRowDef="let row; columns: displayedUserColumns;" class="rowbg"
+    					title="Click to see analysed result of this user.">
+    				</mat-row>
+  				</mat-table>
+    				<div *ngIf="Totaluserdisp">Showing&nbsp;&nbsp;<span class="Totaluser">{{TotalUsers}}</span>&nbsp;&nbsp;users for admin&nbsp;&nbsp;<span class="Totaluser">'{{SelectedAdminName}}'</span></div>
+  			</div>
+  			<!--******************************************************************************************-->
+  			<div *ngIf="userAnalysisTab">Clicked User is {{ClickedAdmin}}</div>
+
+  			<!--******************************************************************************************-->
+			</div>
+
+<!--////////////////////////////////////////////////////////////////////////////////////-->	
+	</div>
+</div>

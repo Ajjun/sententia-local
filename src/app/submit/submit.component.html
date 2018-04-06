@@ -1,0 +1,129 @@
+      <mat-progress-bar *ngIf="progressbar"
+          class="progressBar"
+          color="primary"
+          mode="indeterminate">
+      </mat-progress-bar>
+<div class="container">
+<span class="AnalyseText">Analysis of <span class="FileName">&nbsp;&nbsp;"{{documentName}}"</span></span>
+
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="0px" fxLayoutGap.xs="0px" class="userflex">
+<div fxFlex="33%" class="gauges">
+<ngx-gauge *ngIf="GagueDisp"
+           [value]="gaugeVal"
+           [type]="gaugeType" class="gauge" thick="20" cap="round" width="100%" height="auto"
+           [label]="gaugeLabel"
+           [append]="gaugeAppendText" [thresholds]="thresholdConfig">
+</ngx-gauge>
+<div class="TotSen TotSenErr ACENTER">
+              Total number of sentences : <span style="margin-left:5px;">{{TotSen}}</span>
+      </div>
+      <div class="TotErr TotSenErr ACENTER">
+                  Total number of mistakes : <span style="margin-left:12px;">{{TotErr}}</span>
+      </div>
+</div>
+
+<div fxFlex="33%">
+<ngx-charts-pie-chart *ngIf="DonutDisp" class="piegraph"
+      width="100%" height="auto"
+      [scheme]="colorSchemePieeGraph"
+      [results]="single"
+      [legend]="showLegendPieGraph"
+      [explodeSlices]="explodeSlices"
+      [labels]="showLabels"
+      [doughnut]="doughnut"
+      [gradient]="gradient"
+      arcWidth="0.4"
+    (select)="OnPieSelect($event)">
+</ngx-charts-pie-chart>
+<span class="PieChartName">Category wise mistakes</span>
+</div>
+
+<div  fxFlex="33%">
+<div class="DocDownload"><span class="DownloadText">To download the analysis report of your uploaded file, please click the download button below.</span>
+</div>
+<span class="DownloadBtn"><button mat-raised-button color="primary" class="signin-btn" type="button" (click)="docDownload()">{{DownBtnText}}</button></span>
+</div>
+</div>
+
+<div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap.xs="0px" class="userflex" class="infoFlex">
+
+<div fxFlex="50%" class="example-container mat-elevation-z8 SugTable" 
+      *ngIf="SugTableDisplayValue">
+    <div class="Sugheader">
+    <span class="tablehead">{{ sugTabHead }}</span>
+      <i class="fa fa-times-circle SugTabCls" (click)="SugTabCls()"></i>
+  </div>
+
+  <mat-table class="docname-table" #table [dataSource]="sugTabDataSource" matSort>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Column">
+        <mat-cell *matCellDef="let sugTabdata" class="rowcursor"> <span class="errsen">{{sugTabdata.errSen}}</span><br>
+          <span *ngIf="Errors"> 
+          <span *ngFor="let sug of sugTabdata.sugSen[0]; let i = index" class="rowbg sugsen" title="Click for more." (click)="SugClick(sugTabdata, i)">{{sug}}</span></span>
+      <span *ngIf="spellCheckErr">
+      <span *ngFor="let sug of sugTabdata.sugSen; let i = index" class="rowbg sugsen" title="Click for more." (click)="SpellClick(sug, i)">Error word :- {{sug[0]}}<br>Suggestions :- {{sug[1]}}</span>
+    </span>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedSugColumns" class="Sugrow" style="display:none;"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedSugColumns;" style="padding: 0 8px !important;" (click)="Sughighlight(row)" >
+    </mat-row>
+  </mat-table>
+  </div>
+
+<div fxFlex="50%" class="SugBox" *ngIf="SugBoxisplayValue">
+    <div class="SugBoxHead">Suggestion Box<i class="fa fa-times-circle SugBoxCls" (click)="SugBoxCls()"></i></div>
+    <div class="SugBoxBody">
+    <span class="Sugboxmain1 Sugboxmain">
+      <span class="DocErrHead MainHead">{{mistakeHead}}</span>
+      <span id="DocError" class="SugBoxSpan">{{DocErr}}</span>
+    </span>
+    <span class="Sugboxmain2">
+      <span class="DocSugHead MainHead">{{suggestionHead}}</span>
+      <span id="DocSug" class="SugBoxSpan">{{DocSug}}</span>
+    </span>
+    <span *ngIf="examples" class="Sugboxmain3">
+      <span class="DocExampleHead MainHead">Examples</span>
+      <span id="DocExample" class="SugBoxSpan">{{DocExample}}</span>
+    </span>
+    <span class="Sugboxmain4">
+      <span class="FeedbackHead MainHead">Feedback</span>
+      <textarea calss="FeedBackText" placeholder="Enter your feedback here"></textarea>
+    </span>
+      <button mat-raised-button color="primary" class="SugBoxBtn">Submit</button></div>
+</div>
+<div class="infoDiv" [ngClass]="{'InfoAfterClick': InfoAfterClickVal, 'InfoDisplayNone': InfoDisplayNoneVal}">
+        <span class="InfoHead">Meaning of Categories</span>
+        <span class="Info">
+        <span class="InfoItems">
+        <span class="InfoTerm">Tense: </span>
+        <span class="TermInfo">It specifies the mistakes done in Tense Part.</span></span>
+        <span class="InfoItems">
+        <span class="InfoTerm">Loose Sentence: </span>
+        <span class="TermInfo">If three or more continuous sentence contains 'wh' words, 'or' and 'and' words.</span></span>
+        <span class="InfoItems">
+        <span class="InfoTerm">Punctuation: </span>
+        <span class="TermInfo">It specifies the punctuation mistakes in the sentence.</span></span>
+        <span class="InfoItems">
+        <span class="InfoTerm">Negativity: </span>
+        <span class="TermInfo">Negative terms like 'un' words or not are not suggested in technical papers.</span></span>
+        <span class="InfoItems">
+        <span class="InfoTerm">Terse writing: </span>
+        <span class="TermInfo">Some of the words are needed to be replaced.</span></span>
+        <span class="InfoItems">
+        <span class="InfoTerm">Buggy words: </span>
+        <span class="TermInfo">It specifies the words/phrase which are not valid. For ex: datas is not a valid word should be replace by data.</span></span>
+        <span class="InfoItems">
+        <span class="InfoTerm">Spell check: </span>
+        <span class="TermInfo">It specifies an error in the conventionally accepted form of spelling a word.</span></span>
+        <span class="InfoItems">
+        <span class="InfoTerm">Starting and Ending of the Sentence: </span>
+        <span class="TermInfo">It specifies the words or phrase which is not recomended in begining of a sentence.</span></span>
+        </span>
+</div>
+
+</div>
+
+</div>

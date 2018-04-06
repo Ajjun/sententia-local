@@ -1,0 +1,156 @@
+<div class="container margtp">
+	<div  fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="10px">
+		<div class="abt_style abtus_txt">My Learning</div>
+	</div>
+	<div class="UserSetting" >
+		<div *ngIf="cat1">
+		<div class="profile" >{{category1}}<hr></div>
+		<div class="editProf">
+    		<div class="dvstlcnt row">
+				<div  class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Videos<hr></span>
+						<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let video1 of videoData1" ><a href="{{video1.value}}" target="_blank"><i class="fa fa-caret-right"></i>{{video1.key}}</a></div>
+						</li>
+					</ul>
+					</div>
+				</div>
+				 <div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Books<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let book1 of bookData1" ><i class="fa fa-caret-right"></i>{{book1.value}}</div>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Links<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let link1 of linksData1" ><a href="{{link1.value}}" target="_blank"><i class="fa fa-caret-right"></i>{{link1.key}}</a></div>
+						</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+			<div class="dvstlcnt row">
+				<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Apps<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let app1 of appsData1" ><a href="{{app1.value}}" target="_blank"><i class="fa fa-caret-right"></i>{{app1.key}}</a></div>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Online Courses<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let online1 of onlineData1" ><a href="{{online1.value}}" target="_blank"><i class="fa fa-caret-right"></i>{{online1.key}}</a></div>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Audio Books<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let audio1 of audioData1" ><i class="fa fa-caret-right"></i>{{audio1.value}}</div>
+						</li>
+						</ul>
+					</div>
+				</div> 
+			</div>	
+
+		</div>
+</div>
+
+		<div *ngIf="cat2">
+		<div class="profile" >{{category2}}<hr></div>
+		<div class="editProf" >
+    		<div class="dvstlcnt row">
+				<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Videos<hr></span>
+						<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let video2 of videoData2" ><a href="{{video2.value}}" target="_blank"><i class="fa fa-caret-right"></i>{{video2.key}}</a></div>
+						</li>
+					</ul>
+					</div>
+				</div>
+				 <div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Books<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let book2 of bookData2" ><i class="fa fa-caret-right"></i>{{book2.value}}</div>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Links<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let link2 of linksData2" ><a href="{{link2.value}}" target="_blank"><i class="fa fa-caret-right"></i>{{link2.key}}</a></div>
+						</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+			<div class="dvstlcnt row">
+				<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Apps<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let app2 of appsData2" ><a href="{{app2.value}}" target="_blank"><i class="fa fa-caret-right"></i>{{app2.key}}</a></div>
+						</li>
+						</ul>
+				</div>
+			</div>
+			<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Online Courses<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let online2 of onlineData2" ><a href="{{online2.value}}" target="_blank"><i class="fa fa-caret-right"></i>{{online2.key}}</a></div>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="stltyp col-md-4 col-sm-12 col-lg-4 col-xs-12">
+						<span class="typsub">Audio Books<hr></span>
+					<div class="cntview">
+						<ul class="ulstl">
+						<li>
+						<div class="vdspn"*ngFor="let audio2 of audioData2" ><i class="fa fa-caret-right"></i>{{audio2.value}}</div>
+						</li>
+						</ul>
+					</div>
+				</div> 
+	</div>	
+
+		</div>
+
+
+</div>
+
+	
+</div>
+</div>
+
+

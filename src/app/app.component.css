@@ -1,0 +1,29 @@
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.senlogo {
+  margin-top:8px;
+  width:20%;
+}
+
+.mat-primary {
+    background: #f4f5f8 !important;
+    color: rgb(46, 89, 132) !important;
+}
+
+.mat-drawer-container {
+    background-color: #fffdfd;
+}
+
+.mat-sidenav {
+    width: 300px;
+}
+
+.mat-button {
+    font-weight: 700 !important;
+}
